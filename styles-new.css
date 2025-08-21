@@ -2199,23 +2199,34 @@ html {
         display: none;
     }
 
-    /* Hero Section - MOBILE ONLY */
+    /* Hero Section - MOBILE WITH BACKGROUND */
     .hero {
         padding: 90px 0 40px !important;
         min-height: 60vh !important;
+        position: relative !important;
     }
 
-    /* Mobile: Hide house background, show clean overlay */
+    /* Mobile: Show house background with stronger overlay */
     .hero-background {
-        display: none !important;
+        display: block !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 1 !important;
     }
 
     .hero-image-bg {
-        display: none !important;
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
     }
 
     .hero-overlay {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%) !important;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%) !important;
+        z-index: 2 !important;
     }
 
     .hero-content {
@@ -2237,9 +2248,9 @@ html {
 
     .hero-text h1 {
         font-size: 2.5rem !important;
-        color: #2c3e50 !important;
+        color: white !important;
         margin-bottom: 1.5rem !important;
-        text-shadow: none !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
         font-weight: 700 !important;
         line-height: 1.2 !important;
         position: relative !important;
@@ -2256,10 +2267,10 @@ html {
 
     .hero-text p {
         font-size: 1.2rem !important;
-        color: #5a6c7d !important;
+        color: white !important;
         margin-bottom: 2rem !important;
         line-height: 1.5 !important;
-        text-shadow: none !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
         max-width: 100% !important;
     }
 
@@ -2338,8 +2349,8 @@ html {
     section#about .about-image,
     .about .about-image,
     section.about .about-image {
-        order: 1 !important;
-        margin: 0 auto 2rem auto !important;
+        order: 2 !important;
+        margin: 2rem auto 0 auto !important;
         width: 100% !important;
         max-width: 250px !important;
         position: relative !important;
@@ -2349,10 +2360,11 @@ html {
     section#about .about-text,
     .about .about-text,
     section.about .about-text {
-        order: 2 !important;
+        order: 1 !important;
         width: 100% !important;
         position: relative !important;
         z-index: 2 !important;
+        margin-bottom: 2rem !important;
     }
 
     section#about .realtor-photo,
