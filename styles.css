@@ -2077,6 +2077,21 @@ html {
     color: #bdc3c7;
 }
 
+/* Desktop: Ensure hero background always shows */
+@media (min-width: 769px) {
+    .hero-background {
+        display: block !important;
+    }
+    
+    .hero-image-bg {
+        display: block !important;
+    }
+    
+    .hero {
+        min-height: 100vh !important;
+    }
+}
+
 /* CLEAN MOBILE CSS - NO PHOTO OVERLAP */
 @media (max-width: 768px) {
     /* Navigation */
@@ -2132,23 +2147,23 @@ html {
         display: none;
     }
 
-    /* Hero Section - COMPLETELY FIXED NO PHOTO OVERLAP */
+    /* Hero Section - MOBILE ONLY */
     .hero {
         padding: 90px 0 40px !important;
         min-height: 60vh !important;
-        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
-        position: relative !important;
     }
 
-    .hero-background,
+    /* Mobile: Hide house background, show clean overlay */
+    .hero-background {
+        display: none !important;
+    }
+
     .hero-image-bg {
         display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
     }
 
     .hero-overlay {
-        display: none !important;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%) !important;
     }
 
     .hero-content {
@@ -2175,6 +2190,16 @@ html {
         text-shadow: none !important;
         font-weight: 700 !important;
         line-height: 1.2 !important;
+        position: relative !important;
+        z-index: 20 !important;
+    }
+
+    /* Ensure no images overlap text in hero on mobile */
+    .hero img,
+    .hero .realtor-photo,
+    .hero::before,
+    .hero::after {
+        display: none !important;
     }
 
     .hero-text p {
@@ -2243,6 +2268,31 @@ html {
     .footer-content {
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
+    }
+
+    /* Fix About Section - No Photo Overlap */
+    .about-content {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 2rem !important;
+    }
+
+    .about-image {
+        order: 1 !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .about-text {
+        order: 2 !important;
+    }
+
+    .about-image .realtor-photo {
+        width: 200px !important;
+        height: 200px !important;
+        margin: 0 auto !important;
+        display: block !important;
+        border-radius: 50% !important;
+        object-fit: cover !important;
     }
 
     .newsletter-form {
