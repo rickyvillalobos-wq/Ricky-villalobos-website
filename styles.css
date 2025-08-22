@@ -950,17 +950,17 @@ section > .container > p {
     border-color: #3498db;
 }
 
-/* BADGE/TAG STYLING FOR ELITE RANKINGS & ACHIEVEMENTS AND RESOURCES */
-.service-detail ul:not(.dropdown-menu):not(.nav-menu) {
-    list-style: none;
-    margin-bottom: 1.5rem;
-    padding: 0;
+/* BADGE/TAG STYLING FOR ELITE RANKINGS & ACHIEVEMENTS LISTS */
+ul[style*="margin: 1rem 0; padding-left: 1.5rem"] {
+    list-style: none !important;
+    margin: 1rem 0 !important;
+    padding: 0 !important;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
 
-.service-detail ul:not(.dropdown-menu):not(.nav-menu) li {
+ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li {
     background: linear-gradient(135deg, #3498db, #2980b9);
     color: white;
     padding: 0.5rem 1rem;
@@ -976,48 +976,42 @@ section > .container > p {
     box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
 }
 
-.service-detail ul:not(.dropdown-menu):not(.nav-menu) li:hover {
+ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li:hover {
     background: linear-gradient(135deg, #2980b9, #1f5f99);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
 }
 
-/* Special styling for checkmark lists - convert to badges */
-.service-detail ul:not(.dropdown-menu):not(.nav-menu) li i.fas.fa-check {
-    margin-right: 0.5rem;
-    font-size: 0.8rem;
-}
-
 /* Alternative badge colors for variety */
-.service-detail ul:not(.dropdown-menu):not(.nav-menu) li:nth-child(4n+1) {
+ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li:nth-child(4n+1) {
     background: linear-gradient(135deg, #27ae60, #219a52);
 }
 
-.service-detail ul:not(.dropdown-menu):not(.nav-menu) li:nth-child(4n+2) {
+ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li:nth-child(4n+2) {
     background: linear-gradient(135deg, #e74c3c, #c0392b);
 }
 
-.service-detail ul:not(.dropdown-menu):not(.nav-menu) li:nth-child(4n+3) {
+ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li:nth-child(4n+3) {
     background: linear-gradient(135deg, #f39c12, #e67e22);
 }
 
-.service-detail ul:not(.dropdown-menu):not(.nav-menu) li:nth-child(4n+4) {
+ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li:nth-child(4n+4) {
     background: linear-gradient(135deg, #9b59b6, #8e44ad);
 }
 
-.service-detail ul:not(.dropdown-menu):not(.nav-menu) li:nth-child(4n+1):hover {
+ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li:nth-child(4n+1):hover {
     background: linear-gradient(135deg, #219a52, #1e8449);
 }
 
-.service-detail ul:not(.dropdown-menu):not(.nav-menu) li:nth-child(4n+2):hover {
+ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li:nth-child(4n+2):hover {
     background: linear-gradient(135deg, #c0392b, #a93226);
 }
 
-.service-detail ul:not(.dropdown-menu):not(.nav-menu) li:nth-child(4n+3):hover {
+ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li:nth-child(4n+3):hover {
     background: linear-gradient(135deg, #e67e22, #d68910);
 }
 
-.service-detail ul:not(.dropdown-menu):not(.nav-menu) li:nth-child(4n+4):hover {
+ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li:nth-child(4n+4):hover {
     background: linear-gradient(135deg, #8e44ad, #7d3c98);
 }
 
