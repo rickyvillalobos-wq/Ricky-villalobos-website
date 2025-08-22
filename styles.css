@@ -950,7 +950,7 @@ section > .container > p {
     border-color: #3498db;
 }
 
-/* BADGE/TAG STYLING FOR ELITE RANKINGS & ACHIEVEMENTS LISTS */
+/* BADGE/TAG STYLING FOR ELITE RANKINGS & ACHIEVEMENTS LISTS - NEUTRAL COLORS */
 ul[style*="margin: 1rem 0; padding-left: 1.5rem"] {
     list-style: none !important;
     margin: 1rem 0 !important;
@@ -961,7 +961,7 @@ ul[style*="margin: 1rem 0; padding-left: 1.5rem"] {
 }
 
 ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li {
-    background: linear-gradient(135deg, #3498db, #2980b9);
+    background: linear-gradient(135deg, #64748b, #475569);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -973,46 +973,46 @@ ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li {
     display: inline-block;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+    box-shadow: 0 2px 8px rgba(100, 116, 139, 0.3);
 }
 
 ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li:hover {
-    background: linear-gradient(135deg, #2980b9, #1f5f99);
+    background: linear-gradient(135deg, #475569, #334155);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+    box-shadow: 0 4px 12px rgba(100, 116, 139, 0.4);
 }
 
-/* Alternative badge colors for variety */
+/* Neutral badge color variations */
 ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li:nth-child(4n+1) {
-    background: linear-gradient(135deg, #27ae60, #219a52);
+    background: linear-gradient(135deg, #6b7280, #4b5563);
 }
 
 ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li:nth-child(4n+2) {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
 }
 
 ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li:nth-child(4n+3) {
-    background: linear-gradient(135deg, #f39c12, #e67e22);
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
 }
 
 ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li:nth-child(4n+4) {
-    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+    background: linear-gradient(135deg, #0ea5e9, #0284c7);
 }
 
 ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li:nth-child(4n+1):hover {
-    background: linear-gradient(135deg, #219a52, #1e8449);
+    background: linear-gradient(135deg, #4b5563, #374151);
 }
 
 ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li:nth-child(4n+2):hover {
-    background: linear-gradient(135deg, #c0392b, #a93226);
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
 }
 
 ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li:nth-child(4n+3):hover {
-    background: linear-gradient(135deg, #e67e22, #d68910);
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
 }
 
 ul[style*="margin: 1rem 0; padding-left: 1.5rem"] li:nth-child(4n+4):hover {
-    background: linear-gradient(135deg, #8e44ad, #7d3c98);
+    background: linear-gradient(135deg, #0284c7, #0369a1);
 }
 
 
