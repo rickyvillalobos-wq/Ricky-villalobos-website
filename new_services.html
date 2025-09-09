@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Ricky Villalobos | 12:45 Team Keller Williams</title>
+    
+    <meta name="description" content="Professional Real Estate Services by Ricky Villalobos - Buying, Selling, Renting, Property Management, Staging, Junk Removal & Contracting in Northern Virginia.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation - Same as index.html */
+        .navbar {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-logo h2 {
+            color: #2563eb;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .nav-logo a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .team-name {
+            color: #666;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: #2563eb;
+        }
+        
+        .nav-contact .phone {
+            background: #2563eb;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .nav-contact .phone:hover {
+            background: #1d4ed8;
+        }
+        
+        /* Mobile Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+        
+        .hamburger .bar {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: 0.3s;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 140px 0 80px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Services Grid */
+        .services {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .service-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        
+        .service-card > p {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .service-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features li {
+            color: #64748b;
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .service-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #16a34a;
+            font-weight: 600;
+        }
+        
+        /* Achievements Section */
+        .achievements {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .achievements h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1e293b;
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .achievement-card {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .achievement-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        
+        .achievement-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .achievement-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+        
+        .achievement-card p {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .achievement-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: #1e293b;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .contact > .container > p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            color: #60a5fa;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+        
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                gap: 1rem;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-card {
+                padding: 2rem;
+            }
+            
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .page-header {
+                padding: 120px 0 60px;
+            }
+            
+            .services, .achievements, .contact {
+                padding: 60px 0;
+            }
+            
+            .service-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html">Ricky Villalobos</a></h2>
+                <span class="team-name">12:45 Team</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-contact">
+                <a href="tel:571-454-3438" class="phone">(571) 454-3438</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Comprehensive real estate solutions for all your needs in Northern Virginia</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Buying & Selling</h3>
+                    <p>Expert guidance through every step of buying or selling your home in Northern Virginia with proven strategies and local market expertise.</p>
+                    <ul class="service-features">
+                        <li>Comprehensive market analysis & competitive pricing</li>
+                        <li>Expert negotiation support & strategy</li>
+                        <li>Complete closing assistance & coordination</li>
+                        <li>Professional photography & marketing</li>
+                        <li>Local market insights & trends</li>
+                        <li>Transaction management from start to finish</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Renting Services</h3>
+                    <p>Find your perfect rental property or list your property for rent with professional management and tenant relations.</p>
+                    <ul class="service-features">
+                        <li>Rental property search & matching</li>
+                        <li>Comprehensive tenant screening</li>
+                        <li>Professional lease management</li>
+                        <li>Automated rent collection systems</li>
+                        <li>Property marketing & listing</li>
+                        <li>Tenant relations & communication</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3>Home Staging</h3>
+                    <p>Transform your home with professional staging to maximize its appeal and value in today's competitive market.</p>
+                    <ul class="service-features">
+                        <li>Professional interior design consultation</li>
+                        <li>Quality furniture rental & placement</li>
+                        <li>Strategic decor placement & styling</li>
+                        <li>Photography preparation & optimization</li>
+                        <li>Market-focused staging strategies</li>
+                        <li>Buyer psychology optimization</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <h3>Junk Removal</h3>
+                    <p>Professional junk removal services to help you declutter and prepare your property for sale or new occupancy.</p>
+                    <ul class="service-features">
+                        <li>Complete residential cleanouts</li>
+                        <li>Respectful estate cleanout services</li>
+                        <li>Eco-friendly disposal & recycling</li>
+                        <li>Donation coordination for usable items</li>
+                        <li>Same-day service availability</li>
+                        <li>Pre-listing preparation assistance</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Property Management</h3>
+                    <p>Comprehensive property management services for rental property owners seeking professional oversight and maximize returns.</p>
+                    <ul class="service-features">
+                        <li>Complete tenant management & relations</li>
+                        <li>Maintenance coordination & oversight</li>
+                        <li>Detailed financial reporting & tracking</li>
+                        <li>24/7 emergency response support</li>
+                        <li>Market rent analysis & optimization</li>
+                        <li>Legal compliance & documentation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3>Contracting & Landscaping</h3>
+                    <p>Trusted network of licensed contractors for all your home improvement needs, plus professional landscaping and maintenance services.</p>
+                    <ul class="service-features">
+                        <li>Complete home renovations & updates</li>
+                        <li>Professional repairs & maintenance</li>
+                        <li>Expert landscaping & lawn care</li>
+                        <li>Kitchen & bathroom modernization</li>
+                        <li>Licensed & fully insured contractors</li>
+                        <li>Project management & coordination</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements">
+        <div class="container">
+            <h2>Elite Rankings & Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>#8 in Northern Virginia/MD</h3>
+                    <p>The 12:45 Team is ranked #8 out of over 20,000 real estate teams in the Northern Virginia and Maryland area.</p>
+                    <div class="achievement-badge">Top 1%</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>#260 Worldwide</h3>
+                    <p>The 12:45 Team is ranked #260 among more than 140,000 agents at Keller Williams Realty worldwide.</p>
+                    <div class="achievement-badge">Elite Status</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Keller Williams Elite</h3>
+                    <p>Part of the largest real estate brokerage worldwide with a proven track record of excellence and innovation.</p>
+                    <div class="achievement-badge">Premier Team</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Contact us today to learn more about our services and how we can help with your real estate needs.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>(571) 454-3438</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>rickyvillalobos@kw.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>4031 University Dr, Fairfax, VA 22030</span>
+                </div>
+            </div>
+            <a href="index.html#contact" class="btn btn-primary">Get in Touch</a>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
