@@ -210,7 +210,7 @@ img, video, iframe {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(47, 79, 107, 0.5), rgba(71, 100, 130, 0.4)), 
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), 
                 url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
     color: white;
     padding: 140px 0 80px;
