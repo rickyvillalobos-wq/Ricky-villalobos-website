@@ -1,8 +1,11 @@
-// ENHANCED MOBILE NAVIGATION AND FUNCTIONALITY
+// ENHANCED MOBILE NAVIGATION AND SCROLL ANIMATIONS
 
 document.addEventListener('DOMContentLoaded', function() {
     // Add loaded class to body for animations
     document.body.classList.add('loaded');
+    
+    // Initialize scroll animations
+    initScrollAnimations();
     
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
@@ -410,4 +413,75 @@ document.addEventListener('DOMContentLoaded', function() {
             formatPhoneNumber(this);
         });
     });
+    
+    // Add page transition effect
+    addPageTransitions();
 });
+
+// Scroll Animations Function
+function initScrollAnimations() {
+    // Add animation classes to elements
+    const animateElements = document.querySelectorAll('h1, h2, h3, p, .service-card, .contact-card, .review-card, .stat-card, .value-card, .area-card');
+    
+    animateElements.forEach((element, index) => {
+        // Alternate animation types for visual variety
+        const animations = ['fade-in', 'slide-in-left', 'slide-in-right'];
+        const animationType = animations[index % animations.length];
+        element.classList.add(animationType);
+    });
+
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '50px'
+    });
+
+    // Observe all animation elements
+    document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach((element) => {
+        observer.observe(element);
+    });
+}
+
+// Page Transitions Function
+function addPageTransitions() {
+    // Add smooth page transitions
+    const links = document.querySelectorAll('a[href$=".html"]');
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Skip if it's the current page
+            if (href === window.location.pathname.split('/').pop()) {
+                e.preventDefault();
+                return;
+            }
+            
+            // Add fade out animation
+            document.body.style.opacity = '0.8';
+            document.body.style.transform = 'translateY(-10px)';
+            document.body.style.transition = 'all 0.3s ease';
+            
+            // Small delay for smooth transition
+            setTimeout(() => {
+                window.location.href = href;
+            }, 200);
+        });
+    });
+    
+    // Fade in animation on page load
+    document.body.style.opacity = '0';
+    document.body.style.transform = 'translateY(20px)';
+    document.body.style.transition = 'all 0.6s ease';
+    
+    setTimeout(() => {
+        document.body.style.opacity = '1';
+        document.body.style.transform = 'translateY(0)';
+    }, 100);
+}
