@@ -122,11 +122,12 @@
                         <label for="subject">Subject</label>
                         <select id="subject" name="subject">
                             <option value="">Select a topic</option>
-                            <option value="buying">I'm interested in buying a home</option>
-                            <option value="selling">I want to sell my home</option>
-                            <option value="renting">I need rental assistance</option>
-                            <option value="property-management">Property management inquiry</option>
-                            <option value="staging">Home staging services</option>
+                            <option value="buying-selling">Buying & Selling Services</option>
+                            <option value="renting">Renting Services</option>
+                            <option value="staging">Home Staging</option>
+                            <option value="junk-removal">Junk Removal</option>
+                            <option value="property-management">Property Management</option>
+                            <option value="contracting">Contracting & Landscaping</option>
                             <option value="other">Other</option>
                         </select>
                     </div>
@@ -178,6 +179,40 @@
 
         // EmailJS initialization
         emailjs.init("3SWfxdnl1lFBYWDi-");
+        
+        // Auto-select subject based on URL parameter
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const inquiry = urlParams.get('inquiry');
+            
+            if (inquiry) {
+                const subjectSelect = document.getElementById('subject');
+                const messageField = document.getElementById('message');
+                
+                // Set the subject dropdown
+                subjectSelect.value = inquiry;
+                
+                // Pre-fill message based on service
+                const serviceMessages = {
+                    'buying-selling': 'Hi! I\'m interested in your buying and selling services. Please contact me to discuss my real estate needs.',
+                    'renting': 'Hello! I\'d like to learn more about your rental services. Please get in touch to discuss my requirements.',
+                    'staging': 'Hi! I\'m interested in your home staging services. I\'d like to schedule a consultation.',
+                    'junk-removal': 'Hello! I need junk removal services for my property. Please contact me for a quote.',
+                    'property-management': 'Hi! I\'m interested in your property management services. Please reach out to discuss managing my rental property.',
+                    'contracting': 'Hello! I\'d like to learn more about your contracting and landscaping services. Please contact me for consultation.'
+                };
+                
+                if (serviceMessages[inquiry] && !messageField.value) {
+                    messageField.value = serviceMessages[inquiry];
+                }
+                
+                // Scroll to form
+                document.querySelector('.contact-form-section').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
 
         // Contact form submission
         document.getElementById('contact-form').addEventListener('submit', function(event) {
