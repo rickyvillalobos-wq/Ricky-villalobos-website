@@ -977,6 +977,152 @@ img, video, iframe {
     font-weight: 600;
 }
 
+/* Performance Grid */
+.performance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.performance-card {
+    background: white;
+    border-radius: 16px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+    position: relative;
+    overflow: hidden;
+}
+
+.performance-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.performance-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.performance-card:hover::before {
+    opacity: 1;
+}
+
+.performance-card.highlight {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 2px solid var(--primary-color);
+}
+
+.performance-card.advantage {
+    background: linear-gradient(135deg, #fefefe 0%, #f9fafb 100%);
+}
+
+.performance-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    color: white;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.performance-stat {
+    margin-bottom: 20px;
+}
+
+.stat-number {
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+    line-height: 1;
+}
+
+.stat-unit {
+    font-size: 20px;
+    color: var(--text-light);
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.performance-card h3 {
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.stat-description {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.benefit-badge {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+}
+
+.advantage-content {
+    margin-top: 20px;
+}
+
+.vs-comparison {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.vs-label {
+    color: #6b7280;
+    font-size: 14px;
+    padding: 8px 16px;
+    background: #f3f4f6;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.vs-divider {
+    color: var(--text-light);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.vs-advantage {
+    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.3);
+}
+
 /* Reviews Styles */
 .review-stats {
     padding: 80px 0;
