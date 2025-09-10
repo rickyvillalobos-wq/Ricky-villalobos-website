@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties - Ricky Villalobos | 12:45 Team Keller Williams</title>
+    
+    <meta name="description" content="Search properties and get custom listing alerts with Ricky Villalobos and the 12:45 Team in Northern Virginia. Find your perfect home today.">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html" style="text-decoration: none; color: inherit;">Ricky Villalobos</a></h2>
+                <span class="team-name">12:45 Team</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="properties.html" class="nav-link active">Properties</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-contact">
+                <a href="tel:571-454-3438" class="phone">(571) 454-3438</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Properties Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Find Your Perfect Property</h1>
+                <p>Search available properties and set up custom listing alerts to be notified when properties matching your criteria become available.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Search Section -->
+    <section class="property-search-section">
+        <div class="container">
+            <h2>Get Custom Listing Alerts</h2>
+            <p>Tell us what you're looking for, and we'll email you when new properties match your criteria.</p>
+            
+            <div class="search-form">
+                <div class="contact-info-section">
+                    <h3>Your Contact Information</h3>
+                    <div class="search-row">
+                        <div class="search-group">
+                            <label>First Name *</label>
+                            <input type="text" id="first-name" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="search-group">
+                            <label>Last Name *</label>
+                            <input type="text" id="last-name" placeholder="Enter your last name" required>
+                        </div>
+                    </div>
+                    <div class="search-row">
+                        <div class="search-group">
+                            <label>Phone Number *</label>
+                            <input type="tel" id="phone-number" placeholder="(571) 454-3438" required>
+                        </div>
+                        <div class="search-group">
+                            <label>Email Address</label>
+                            <input type="email" id="email-address" placeholder="your.email@example.com">
+                        </div>
+                    </div>
+                    
+                    <h3>Property Preferences (Optional)</h3>
+                    <div class="search-row">
+                        <div class="search-group">
+                            <label>Location/Area</label>
+                            <input type="text" id="location" placeholder="e.g., Fairfax, Arlington, Alexandria">
+                        </div>
+                        <div class="search-group">
+                            <label>Price Range</label>
+                            <select id="price-range">
+                                <option value="">Any Price</option>
+                                <option value="0-300000">Under $300,000</option>
+                                <option value="300000-500000">$300,000 - $500,000</option>
+                                <option value="500000-700000">$500,000 - $700,000</option>
+                                <option value="700000-1000000">$700,000 - $1,000,000</option>
+                                <option value="1000000+">$1,000,000+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="search-row">
+                        <div class="search-group">
+                            <label>Bedrooms</label>
+                            <select id="bedrooms">
+                                <option value="">Any</option>
+                                <option value="1+">1+</option>
+                                <option value="2+">2+</option>
+                                <option value="3+">3+</option>
+                                <option value="4+">4+</option>
+                                <option value="5+">5+</option>
+                            </select>
+                        </div>
+                        <div class="search-group">
+                            <label>Bathrooms</label>
+                            <select id="bathrooms">
+                                <option value="">Any</option>
+                                <option value="1+">1+</option>
+                                <option value="2+">2+</option>
+                                <option value="3+">3+</option>
+                                <option value="4+">4+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="search-group">
+                        <label>Additional Notes</label>
+                        <textarea id="notes" placeholder="Any specific requirements or preferences..." rows="3"></textarea>
+                    </div>
+                    
+                    <button type="button" class="search-btn" onclick="handleListingAlertsSubmit(event)">Set Up My Listing Alerts</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Areas Section -->
+    <section class="featured-areas">
+        <div class="container">
+            <h2>Featured Areas We Serve</h2>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <img src="dc-home.jpeg" alt="Fairfax County" class="area-image">
+                    <div class="area-content">
+                        <h3>Fairfax County</h3>
+                        <p>Premium neighborhoods with excellent schools and convenient access to DC.</p>
+                        <ul class="area-highlights">
+                            <li>Top-rated school districts</li>
+                            <li>Metro accessible communities</li>
+                            <li>Family-friendly neighborhoods</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="area-card">
+                    <img src="dc-home.jpeg" alt="Arlington County" class="area-image">
+                    <div class="area-content">
+                        <h3>Arlington County</h3>
+                        <p>Urban living with easy commutes to Washington DC and Pentagon.</p>
+                        <ul class="area-highlights">
+                            <li>Walkable communities</li>
+                            <li>Metro rail access</li>
+                            <li>Vibrant dining scene</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="area-card">
+                    <img src="dc-home.jpeg" alt="Alexandria" class="area-image">
+                    <div class="area-content">
+                        <h3>Alexandria</h3>
+                        <p>Historic charm meets modern convenience in this waterfront city.</p>
+                        <ul class="area-highlights">
+                            <li>Historic Old Town</li>
+                            <li>Potomac riverfront</li>
+                            <li>Cultural attractions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="area-card">
+                    <img src="dc-home.jpeg" alt="Loudoun County" class="area-image">
+                    <div class="area-content">
+                        <h3>Loudoun County</h3>
+                        <p>Growing communities with new construction and excellent amenities.</p>
+                        <ul class="area-highlights">
+                            <li>New development communities</li>
+                            <li>Wine country access</li>
+                            <li>Modern amenities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Insights -->
+    <section class="market-insights">
+        <div class="container">
+            <h2>Northern Virginia Market Insights</h2>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Market Trends</h3>
+                    <p>Stay informed about current market conditions, pricing trends, and inventory levels in Northern Virginia.</p>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3>School Districts</h3>
+                    <p>Northern Virginia is home to some of the nation's top-rated school districts, making it ideal for families.</p>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-subway"></i>
+                    </div>
+                    <h3>Transportation</h3>
+                    <p>Excellent Metro, VRE, and highway access provides easy commutes throughout the DC metro area.</p>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Employment Hub</h3>
+                    <p>Home to numerous Fortune 500 companies, government contractors, and tech companies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Search?</h2>
+                <p>Let our expert team help you find the perfect property in Northern Virginia</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Schedule Consultation</a>
+                    <a href="tel:571-454-3438" class="btn btn-outline">Call Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+
+        // EmailJS initialization
+        emailjs.init("3SWfxdnl1lFBYWDi-");
+        
+        function handleListingAlertsSubmit(event) {
+            event.preventDefault();
+            
+            const formData = {
+                firstName: document.getElementById('first-name')?.value || '',
+                lastName: document.getElementById('last-name')?.value || '',
+                phone: document.getElementById('phone-number')?.value || '',
+                email: document.getElementById('email-address')?.value || '',
+                location: document.getElementById('location')?.value || '',
+                priceRange: document.getElementById('price-range')?.value || '',
+                bedrooms: document.getElementById('bedrooms')?.value || '',
+                bathrooms: document.getElementById('bathrooms')?.value || '',
+                notes: document.getElementById('notes')?.value || ''
+            };
+            
+            if (!formData.firstName || !formData.lastName || !formData.phone) {
+                alert('Please fill in all required fields (First Name, Last Name, and Phone Number).');
+                return;
+            }
+            
+            const submitBtn = event.target;
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            const templateParams = {
+                to_email: 'rickyvillalobos@kw.com',
+                from_name: `${formData.firstName} ${formData.lastName}`,
+                from_email: formData.email,
+                phone: formData.phone,
+                message: `New Property Listing Alerts Signup:
+
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Location Preference: ${formData.location || 'Not specified'}
+Price Range: ${formData.priceRange || 'Any price'}
+Bedrooms: ${formData.bedrooms || 'Any'}
+Bathrooms: ${formData.bathrooms || 'Any'}
+Additional Notes: ${formData.notes || 'None'}
+
+Submitted: ${new Date().toLocaleString()}`,
+                subject: `Property Listing Alerts Signup - ${formData.firstName} ${formData.lastName}`
+            };
+            
+            emailjs.send('service_ll15f7k', 'template_cz2jmqw', templateParams)
+                .then(function(response) {
+                    alert('Thank you! Your listing alerts request has been sent successfully. Ricky will contact you soon to set up your personalized property alerts.');
+                    // Reset form
+                    document.getElementById('first-name').value = '';
+                    document.getElementById('last-name').value = '';
+                    document.getElementById('phone-number').value = '';
+                    document.getElementById('email-address').value = '';
+                    document.getElementById('location').value = '';
+                    document.getElementById('price-range').value = '';
+                    document.getElementById('bedrooms').value = '';
+                    document.getElementById('bathrooms').value = '';
+                    document.getElementById('notes').value = '';
+                })
+                .catch(function(error) {
+                    alert('There was an issue sending your request. Please try again or contact Ricky directly at (571) 454-3438.');
+                })
+                .finally(function() {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+        }
+    </script>
+</body>
+</html>

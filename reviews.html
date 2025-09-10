@@ -3,363 +3,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leave a Review - Ricky Villalobos | 12:45 Team</title>
+    <title>Reviews - Ricky Villalobos | 12:45 Team Keller Williams</title>
+    
+    <meta name="description" content="Client reviews and testimonials for Ricky Villalobos and the 12:45 Team. See what our satisfied clients say about our real estate services in Northern Virginia.">
+    
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="reviews-header">
-        <div class="container">
-            <div class="header-content">
-                <h1>Share Your Experience</h1>
-                <p>We'd love to hear about your experience working with Ricky and the 12:45 Team. Your review helps us continuously improve our services and assists future clients in making informed decisions.</p>
-                <div class="agent-info">
-                    <div class="agent-details">
-                        <h3>Ricky Villalobos</h3>
-                        <p>12:45 Team • Keller Williams Capital Properties</p>
-                        <p><i class="fas fa-phone"></i> (571) 454-3438</p>
-                        <p><i class="fas fa-envelope"></i> rickyvillalobos@kw.com</p>
-                    </div>
-                </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html" style="text-decoration: none; color: inherit;">Ricky Villalobos</a></h2>
+                <span class="team-name">12:45 Team</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="properties.html" class="nav-link">Properties</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="reviews.html" class="nav-link active">Reviews</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-contact">
+                <a href="tel:571-454-3438" class="phone">(571) 454-3438</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Review Form Section -->
-    <section class="leave-review">
+    <!-- Reviews Hero Section -->
+    <section class="hero">
         <div class="container">
-            <div class="review-form-container">
-                <form class="review-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="review-name">Your Name *</label>
-                            <input type="text" id="review-name" placeholder="Enter your full name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="review-email">Email Address</label>
-                            <input type="email" id="review-email" placeholder="your.email@example.com">
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="review-service">Service Used</label>
-                            <select id="review-service">
-                                <option value="">Select the service you used</option>
-                                <option value="buying">Home Buying</option>
-                                <option value="selling">Home Selling</option>
-                                <option value="renting">Rental Services</option>
-                                <option value="staging">Home Staging</option>
-                                <option value="junk-removal">Junk Removal</option>
-                                <option value="property-management">Property Management</option>
-                                <option value="contracting">Contracting Services</option>
-                                <option value="lawn-care">Lawn Care</option>
-                                <option value="consultation">Consultation</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="review-rating">Overall Rating *</label>
-                            <div class="star-rating" id="star-rating">
-                                <span class="star" data-rating="1">★</span>
-                                <span class="star" data-rating="2">★</span>
-                                <span class="star" data-rating="3">★</span>
-                                <span class="star" data-rating="4">★</span>
-                                <span class="star" data-rating="5">★</span>
-                            </div>
-                            <input type="hidden" id="review-rating" name="rating" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group full-width">
-                            <label for="review-title">Review Title *</label>
-                            <input type="text" id="review-title" placeholder="Brief title for your review" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group full-width">
-                            <label for="review-content">Your Review *</label>
-                            <textarea id="review-content" rows="6" placeholder="Share your experience working with Ricky and the 12:45 Team..." required></textarea>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group full-width">
-                            <div class="consent-group">
-                                <input type="checkbox" id="review-consent" required>
-                                <label for="review-consent">I consent to having this review displayed on the website and marketing materials. I understand that my name and review content may be publicly visible.</label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group full-width">
-                            <button type="submit" class="btn btn-primary review-submit" onclick="handleReviewSubmit(event)">Submit Review</button>
-                        </div>
-                    </div>
-                </form>
+            <div class="hero-content">
+                <h1>Client Reviews & Testimonials</h1>
+                <p>See what our satisfied clients say about working with Ricky Villalobos and the 12:45 Team in Northern Virginia.</p>
             </div>
         </div>
     </section>
 
-    <!-- Success Message Section -->
-    <section class="thank-you" id="thank-you-section" style="display: none;">
+    <!-- Review Stats -->
+    <section class="review-stats">
         <div class="container">
-            <div class="thank-you-content">
-                <i class="fas fa-check-circle"></i>
-                <h2>Thank You!</h2>
-                <p>Your review has been submitted successfully. We appreciate your feedback and will review it shortly.</p>
-                <div class="contact-info">
-                    <p><strong>Need immediate assistance?</strong></p>
-                    <p><i class="fas fa-phone"></i> (571) 454-3438</p>
-                    <p><i class="fas fa-envelope"></i> rickyvillalobos@kw.com</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>4.9/5</h3>
+                    <p>Average Rating</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>500+</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>98%</h3>
+                    <p>Client Satisfaction</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>#8</h3>
+                    <p>Team Ranking NoVA</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- JavaScript -->
+    <!-- Featured Reviews -->
+    <section class="featured-reviews">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="reviews-grid">
+                <div class="review-card featured">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>"Exceptional Service from Start to Finish"</h3>
+                    <p>"Ricky and the 12:45 Team made our first home buying experience incredibly smooth. They were knowledgeable about the Northern Virginia market, responsive to all our questions, and helped us find the perfect home within our budget. Their expertise in negotiations saved us thousands!"</p>
+                    <div class="review-author">
+                        <strong>Sarah & Michael J.</strong>
+                        <span>Home Buyers - Fairfax</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>"Sold Our Home in 10 Days!"</h3>
+                    <p>"We needed to sell our home quickly due to a job relocation. Ricky's marketing strategy was outstanding - professional photos, multiple platforms, and great pricing advice. Our home sold in just 10 days for above asking price. Couldn't be happier!"</p>
+                    <div class="review-author">
+                        <strong>Jennifer L.</strong>
+                        <span>Home Seller - Arlington</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>"Professional Property Management"</h3>
+                    <p>"The 12:45 Team has been managing our rental properties for over two years. They handle everything - from tenant screening to maintenance coordination. Their monthly reports are detailed and transparent. We've had zero vacancy issues!"</p>
+                    <div class="review-author">
+                        <strong>Robert & Maria K.</strong>
+                        <span>Property Owners - Alexandria</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>"Outstanding Communication"</h3>
+                    <p>"As first-time home sellers, we had many questions and concerns. Ricky was always available to answer our calls and emails, often responding within hours. His staging recommendations and marketing expertise helped us get top dollar for our home."</p>
+                    <div class="review-author">
+                        <strong>David & Lisa M.</strong>
+                        <span>Home Sellers - Loudoun County</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>"Complete Real Estate Solution"</h3>
+                    <p>"We used the 12:45 Team for both selling our old home and buying our new one. They coordinated the timing perfectly, and their contractor network helped with repairs and improvements. Having everything handled by one team was incredibly convenient."</p>
+                    <div class="review-author">
+                        <strong>Amanda & James R.</strong>
+                        <span>Home Buyers & Sellers - Fairfax</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>"Stress-Free Home Buying"</h3>
+                    <p>"Moving from out of state, we needed an agent who could work with our tight timeline and unique situation. Ricky went above and beyond, providing virtual tours, handling inspections, and coordinating everything for a smooth closing. Highly recommend!"</p>
+                    <div class="review-author">
+                        <strong>Carlos & Elena T.</strong>
+                        <span>Home Buyers - Arlington</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Categories -->
+    <section class="review-categories">
+        <div class="container">
+            <h2>Reviews by Service</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Home Buying</h3>
+                    <div class="category-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>4.9/5 (150+ reviews)</span>
+                    </div>
+                    <p>"Exceptional guidance through the entire buying process. Knowledgeable about market trends and neighborhoods."</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3>Home Selling</h3>
+                    <div class="category-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>4.8/5 (200+ reviews)</span>
+                    </div>
+                    <p>"Outstanding marketing strategy and pricing expertise. Homes sell faster and for top dollar."</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Property Management</h3>
+                    <div class="category-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>4.9/5 (75+ reviews)</span>
+                    </div>
+                    <p>"Professional property management with transparent reporting and excellent tenant relations."</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Home Staging</h3>
+                    <div class="category-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>5.0/5 (50+ reviews)</span>
+                    </div>
+                    <p>"Professional staging that transforms homes and creates maximum buyer appeal and value."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognition -->
+    <section class="awards-section">
+        <div class="container">
+            <h2>Awards & Recognition</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>#8 Team in NoVA/MD</h3>
+                    <p>Ranked #8 out of over 20,000 real estate teams in Northern Virginia and Maryland</p>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>#260 Worldwide</h3>
+                    <p>Ranked #260 among 140,000+ Keller Williams agents worldwide</p>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Top 1% Performance</h3>
+                    <p>Consistently ranked in the top 1% of real estate professionals</p>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Client Choice Award</h3>
+                    <p>98% client satisfaction rate based on post-transaction surveys</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Experience Exceptional Service?</h2>
+                <p>Join our hundreds of satisfied clients who chose the 12:45 Team for their real estate needs</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    <a href="tel:571-454-3438" class="btn btn-outline">Call Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script>
-    // Initialize EmailJS
-    (function() {
-        emailjs.init("bGxN2QNCvDgD7b7Tp");
-        console.log('EmailJS initialized for reviews page');
-    })();
-
-    // Star Rating Functionality
-    let currentRating = 0;
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        const stars = document.querySelectorAll('.star');
-        
-        stars.forEach(star => {
-            star.addEventListener('click', function() {
-                currentRating = parseInt(this.getAttribute('data-rating'));
-                document.getElementById('review-rating').value = currentRating;
-                highlightStars(currentRating);
-            });
-            
-            star.addEventListener('mouseover', function() {
-                const rating = parseInt(this.getAttribute('data-rating'));
-                highlightStars(rating);
-            });
+        // Mobile menu toggle
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('active');
         });
-        
-        document.querySelector('.star-rating').addEventListener('mouseleave', function() {
-            highlightStars(currentRating);
-        });
-    });
-    
-    function highlightStars(rating) {
-        const stars = document.querySelectorAll('.star');
-        stars.forEach((star, index) => {
-            if (index < rating) {
-                star.classList.add('active');
-            } else {
-                star.classList.remove('active');
-            }
-        });
-    }
-
-    // Review Form Submission
-    function handleReviewSubmit(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        console.log('Review form submitted!');
-        
-        // Get form data
-        const formData = {
-            name: document.getElementById('review-name')?.value || '',
-            email: document.getElementById('review-email')?.value || '',
-            service: document.getElementById('review-service')?.value || '',
-            rating: currentRating,
-            title: document.getElementById('review-title')?.value || '',
-            content: document.getElementById('review-content')?.value || '',
-            consent: document.getElementById('review-consent')?.checked || false
-        };
-        
-        // Validate required fields
-        if (!formData.name || !formData.rating || !formData.title || !formData.content || !formData.consent) {
-            alert('Please fill in all required fields (Name, Rating, Title, Content) and provide consent for review display.');
-            return;
-        }
-        
-        // Show loading state
-        const submitBtn = event.target;
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Submitting...';
-        submitBtn.disabled = true;
-        
-        // Send email via EmailJS
-        const templateParams = {
-            to_email: 'rickyvillalobos@kw.com',
-            from_name: formData.name,
-            from_email: formData.email,
-            phone: '', // Reviews don't have phone
-            message: `New Client Review Submission:
-
-Name: ${formData.name}
-Email: ${formData.email}
-Service Used: ${formData.service}
-Rating: ${formData.rating}/5 stars
-Review Title: ${formData.title}
-
-Review Content:
-${formData.content}
-
-Consent for Display: ${formData.consent ? 'Yes' : 'No'}
-
-Submitted: ${new Date().toLocaleString()}
-
-Source: Standalone Reviews Page`,
-            subject: `Website Review Submission - ${formData.name}`,
-            timestamp: new Date().toLocaleString()
-        };
-        
-        console.log('Sending review email with params:', templateParams);
-        
-        emailjs.send('service_ll15f7k', 'template_cz2jmqw', templateParams)
-            .then(function(response) {
-                console.log('Review email sent successfully!', response);
-                
-                // Hide form and show thank you message
-                document.querySelector('.leave-review').style.display = 'none';
-                document.getElementById('thank-you-section').style.display = 'block';
-                
-                // Scroll to thank you section
-                document.getElementById('thank-you-section').scrollIntoView({ 
-                    behavior: 'smooth' 
-                });
-            })
-            .catch(function(error) {
-                console.error('Failed to send review email:', error);
-                alert('There was an issue submitting your review. Please try again or contact Ricky directly at (571) 454-3438.');
-            })
-            .finally(function() {
-                // Reset button state
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            });
-    }
     </script>
-
-    <!-- Additional Styles for Reviews Page -->
-    <style>
-    .reviews-header {
-        background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
-        color: white;
-        padding: 4rem 0 3rem;
-        text-align: center;
-    }
-    
-    .reviews-header h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-        font-weight: 700;
-    }
-    
-    .reviews-header p {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-        opacity: 0.9;
-    }
-    
-    .agent-info {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 15px;
-        padding: 2rem;
-        max-width: 400px;
-        margin: 0 auto;
-        backdrop-filter: blur(10px);
-    }
-    
-    .agent-details h3 {
-        margin-bottom: 0.5rem;
-        font-size: 1.5rem;
-    }
-    
-    .agent-details p {
-        margin-bottom: 0.5rem;
-        opacity: 0.9;
-    }
-    
-    .agent-details i {
-        margin-right: 0.5rem;
-        width: 16px;
-    }
-    
-    .leave-review {
-        padding: 4rem 0;
-        background: #f8f9fa;
-    }
-    
-    .thank-you {
-        padding: 4rem 0;
-        background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
-        color: white;
-        text-align: center;
-    }
-    
-    .thank-you-content i {
-        font-size: 4rem;
-        margin-bottom: 1rem;
-        opacity: 0.9;
-    }
-    
-    .thank-you-content h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-    }
-    
-    .thank-you-content p {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-    }
-    
-    .contact-info {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-        padding: 1.5rem;
-        max-width: 300px;
-        margin: 0 auto;
-        backdrop-filter: blur(10px);
-    }
-    
-    .contact-info p {
-        margin-bottom: 0.5rem;
-    }
-    
-    @media (max-width: 768px) {
-        .reviews-header {
-            padding: 3rem 0 2rem;
-        }
-        
-        .reviews-header h1 {
-            font-size: 2rem;
-        }
-        
-        .reviews-header p {
-            font-size: 1rem;
-        }
-        
-        .agent-info {
-            padding: 1.5rem;
-        }
-        
-        .leave-review {
-            padding: 3rem 0;
-        }
-    }
-    </style>
 </body>
 </html>
