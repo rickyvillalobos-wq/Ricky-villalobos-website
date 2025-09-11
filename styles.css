@@ -1592,7 +1592,7 @@ img, video, iframe {
     }
     
     .hero {
-        padding: 120px 0 80px;
+        padding: 100px 0 60px;
     }
     
     .hero-buttons .btn {
@@ -1713,7 +1713,7 @@ img, video, iframe {
     }
     
     .hero {
-        padding: 110px 0 70px;
+        padding: 100px 0 60px;
     }
     
     .hero h1 {
@@ -1989,6 +1989,6 @@ img, video, iframe {
     }
     
     .hero {
-        padding: 130px 0 80px;
+        padding: 100px 0 60px;
     }
 }
