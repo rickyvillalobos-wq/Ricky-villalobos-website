@@ -213,7 +213,7 @@ img, video, iframe {
 /* Hero Section */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), 
-                url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2053&q=80') center/cover no-repeat;
+                url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80') center/cover no-repeat;
     color: white;
     padding: 140px 0 80px;
     text-align: center;
