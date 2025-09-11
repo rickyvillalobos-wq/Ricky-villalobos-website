@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -89,7 +92,12 @@
     <section class="featured-reviews">
         <div class="container">
             <h2>What Our Clients Say</h2>
-            <div class="reviews-grid">
+            <div class="reviews-container">
+                <button class="scroll-btn left" id="scroll-left">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="reviews-wrapper">
+                    <div class="reviews-grid" id="reviews-grid">
                 <div class="review-card featured">
                     <div class="review-rating">
                         <i class="fas fa-star"></i>
@@ -185,86 +193,175 @@
                         <span>Home Buyers - Arlington</span>
                     </div>
                 </div>
+
+                <div class="review-card">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>"Incredible Market Knowledge"</h3>
+                    <p>"Ricky's expertise in the NoVA market is unmatched. He helped us understand neighborhood trends, pricing strategies, and timing. His advice saved us from making a costly mistake and led us to the perfect home at the right price."</p>
+                    <div class="review-author">
+                        <strong>Kevin & Patricia H.</strong>
+                        <span>Home Buyers - Vienna</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>"Seamless Rental Process"</h3>
+                    <p>"Finding a rental in this competitive market seemed impossible until we worked with the 12:45 Team. They had access to properties before they hit the market and handled all the paperwork efficiently. Moved in within two weeks!"</p>
+                    <div class="review-author">
+                        <strong>Michelle & Tyler B.</strong>
+                        <span>Renters - Falls Church</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>"Top-Notch Staging Service"</h3>
+                    <p>"The staging service transformed our home completely! What seemed outdated and cramped became modern and spacious. The professional photography captured everything perfectly. Our home sold in 5 days with multiple offers."</p>
+                    <div class="review-author">
+                        <strong>Thomas & Rachel W.</strong>
+                        <span>Home Sellers - Reston</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>"Efficient Junk Removal"</h3>
+                    <p>"Before listing our home, we needed to clear out years of accumulated items. The 12:45 Team's junk removal service was fast, professional, and eco-friendly. They donated what they could and disposed of everything else responsibly."</p>
+                    <div class="review-author">
+                        <strong>Frank & Gloria S.</strong>
+                        <span>Home Sellers - McLean</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>"Reliable Contractor Network"</h3>
+                    <p>"The contractors Ricky connected us with were outstanding. Quality work, fair pricing, and completed on schedule. Having trusted professionals made our home improvements stress-free and added significant value to our property."</p>
+                    <div class="review-author">
+                        <strong>Brian & Laura C.</strong>
+                        <span>Homeowners - Herndon</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>"Excellent Investment Guidance"</h3>
+                    <p>"As first-time investors, we needed someone who understood rental property potential. Ricky analyzed cash flow, appreciation prospects, and neighborhood trends. Our investment property is performing exactly as projected."</p>
+                    <div class="review-author">
+                        <strong>Daniel & Sophie M.</strong>
+                        <span>Property Investors - Centreville</span>
+                    </div>
+                </div>
+                    </div>
+                </div>
+                <button class="scroll-btn right" id="scroll-right">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Review Categories -->
-    <section class="review-categories">
+    <!-- Write a Review Section -->
+    <section class="write-review-section">
         <div class="container">
-            <h2>Reviews by Service</h2>
-            <div class="categories-grid">
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>Home Buying</h3>
-                    <div class="category-rating">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span>4.9/5 (150+ reviews)</span>
-                    </div>
-                    <p>"Exceptional guidance through the entire buying process. Knowledgeable about market trends and neighborhoods."</p>
+            <div class="review-form-content">
+                <div class="form-intro">
+                    <h2>Share Your Experience</h2>
+                    <p>Help others by sharing your experience working with Ricky Villalobos and the 12:45 Team. Your feedback is valuable to us and future clients.</p>
                 </div>
 
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-tag"></i>
-                    </div>
-                    <h3>Home Selling</h3>
-                    <div class="category-rating">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                <form class="review-form" id="review-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reviewerName">Your Name *</label>
+                            <input type="text" id="reviewerName" name="reviewerName" required>
                         </div>
-                        <span>4.8/5 (200+ reviews)</span>
+                        <div class="form-group">
+                            <label for="reviewerEmail">Email Address *</label>
+                            <input type="email" id="reviewerEmail" name="reviewerEmail" required>
+                        </div>
                     </div>
-                    <p>"Outstanding marketing strategy and pricing expertise. Homes sell faster and for top dollar."</p>
-                </div>
 
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-key"></i>
-                    </div>
-                    <h3>Property Management</h3>
-                    <div class="category-rating">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="serviceType">Service Used</label>
+                            <select id="serviceType" name="serviceType">
+                                <option value="">Select a service</option>
+                                <option value="buying">Home Buying</option>
+                                <option value="selling">Home Selling</option>
+                                <option value="property-management">Property Management</option>
+                                <option value="rentals">Rentals</option>
+                                <option value="staging">Home Staging</option>
+                                <option value="junk-removal">Junk Removal</option>
+                                <option value="contracting">Contracting Services</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
-                        <span>4.9/5 (75+ reviews)</span>
+                        <div class="form-group">
+                            <label for="rating">Rating *</label>
+                            <select id="rating" name="rating" required>
+                                <option value="">Select rating</option>
+                                <option value="5">⭐⭐⭐⭐⭐ Excellent (5 stars)</option>
+                                <option value="4">⭐⭐⭐⭐ Very Good (4 stars)</option>
+                                <option value="3">⭐⭐⭐ Good (3 stars)</option>
+                                <option value="2">⭐⭐ Fair (2 stars)</option>
+                                <option value="1">⭐ Poor (1 star)</option>
+                            </select>
+                        </div>
                     </div>
-                    <p>"Professional property management with transparent reporting and excellent tenant relations."</p>
-                </div>
 
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-paint-brush"></i>
+                    <div class="form-group">
+                        <label for="reviewTitle">Review Title *</label>
+                        <input type="text" id="reviewTitle" name="reviewTitle" placeholder="Brief headline for your review" required>
                     </div>
-                    <h3>Home Staging</h3>
-                    <div class="category-rating">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span>5.0/5 (50+ reviews)</span>
+
+                    <div class="form-group">
+                        <label for="reviewMessage">Your Review *</label>
+                        <textarea id="reviewMessage" name="reviewMessage" rows="5" placeholder="Tell us about your experience working with Ricky and the 12:45 Team..." required></textarea>
                     </div>
-                    <p>"Professional staging that transforms homes and creates maximum buyer appeal and value."</p>
-                </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Submit Review</span>
+                        <span class="btn-loading" style="display: none;">Submitting...</span>
+                    </button>
+                </form>
             </div>
         </div>
     </section>
@@ -327,6 +424,92 @@
         // Mobile menu toggle
         document.getElementById('hamburger').addEventListener('click', function() {
             document.getElementById('nav-menu').classList.toggle('active');
+        });
+
+        // EmailJS initialization
+        emailjs.init("3SWfxdnl1lFBYWDi-");
+
+        // Reviews scroll functionality
+        const reviewsGrid = document.getElementById('reviews-grid');
+        const scrollLeftBtn = document.getElementById('scroll-left');
+        const scrollRightBtn = document.getElementById('scroll-right');
+        
+        let currentIndex = 0;
+        const reviewCards = document.querySelectorAll('.review-card');
+        const totalReviews = reviewCards.length;
+        const reviewsPerView = 3;
+        
+        function updateScrollButtons() {
+            scrollLeftBtn.disabled = currentIndex === 0;
+            scrollRightBtn.disabled = currentIndex >= totalReviews - reviewsPerView;
+        }
+        
+        scrollRightBtn.addEventListener('click', function() {
+            if (currentIndex < totalReviews - reviewsPerView) {
+                currentIndex++;
+                const scrollAmount = currentIndex * (reviewCards[0].offsetWidth + 20); // 20px gap
+                reviewsGrid.scrollTo({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+                updateScrollButtons();
+            }
+        });
+        
+        scrollLeftBtn.addEventListener('click', function() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                const scrollAmount = currentIndex * (reviewCards[0].offsetWidth + 20); // 20px gap
+                reviewsGrid.scrollTo({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+                updateScrollButtons();
+            }
+        });
+        
+        // Initialize scroll buttons
+        updateScrollButtons();
+
+        // Review form submission
+        document.getElementById('review-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const submitBtn = event.target.querySelector('.submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            submitBtn.disabled = true;
+            
+            const formData = new FormData(event.target);
+            const templateParams = {
+                to_email: 'rickyvillalobos@kw.com',
+                reviewer_name: formData.get('reviewerName'),
+                reviewer_email: formData.get('reviewerEmail'),
+                service_type: formData.get('serviceType') || 'Not specified',
+                rating: formData.get('rating'),
+                review_title: formData.get('reviewTitle'),
+                review_message: formData.get('reviewMessage'),
+                submitted_date: new Date().toLocaleString()
+            };
+            
+            emailjs.send('service_ll15f7k', 'template_cz2jmqw', templateParams)
+                .then(function(response) {
+                    alert('Thank you for your review! It has been submitted successfully and we appreciate your feedback.');
+                    event.target.reset();
+                })
+                .catch(function(error) {
+                    alert('There was an issue submitting your review. Please try again or contact us directly at (571) 454-3438.');
+                })
+                .finally(function() {
+                    // Reset button state
+                    btnText.style.display = 'inline';
+                    btnLoading.style.display = 'none';
+                    submitBtn.disabled = false;
+                });
         });
     </script>
 </body>
