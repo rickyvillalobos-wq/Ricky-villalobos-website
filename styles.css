@@ -307,22 +307,32 @@ img, video, iframe {
 .hero-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    max-width: 500px;
+    gap: 1.5rem;
+    max-width: 600px;
     margin: 0 auto;
 }
 
 .hero-stat {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
 }
 
 .stat-number {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: #fbbf24;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    min-height: 2.5rem;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .stat-label {
