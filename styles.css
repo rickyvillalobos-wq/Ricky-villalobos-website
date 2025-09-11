@@ -92,8 +92,9 @@ img, video, iframe {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(15, 23, 42, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(15px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     z-index: 1000;
     padding: 0.5rem 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -250,7 +251,7 @@ img, video, iframe {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(17, 24, 39, 0.7), rgba(31, 41, 55, 0.8)), 
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), 
                 url('background .png') center/cover no-repeat;
     color: white;
     padding: 160px 0 100px;
