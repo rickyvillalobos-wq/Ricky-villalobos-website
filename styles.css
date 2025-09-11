@@ -213,9 +213,9 @@ img, video, iframe {
 /* Hero Section */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), 
-                url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80') center/cover no-repeat;
+                url('https://images.unsplash.com/photo-1558618666-fbd6c327c6de?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
     color: white;
-    padding: 140px 0 80px;
+    padding: 160px 0 100px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -384,7 +384,7 @@ img, video, iframe {
     }
     
     .hero {
-        padding: 120px 0 60px;
+        padding: 140px 0 80px;
     }
 }
 
@@ -1445,7 +1445,7 @@ img, video, iframe {
     }
     
     .hero {
-        padding: 90px 0 60px;
+        padding: 120px 0 80px;
     }
     
     .hero-stats {
@@ -1557,7 +1557,7 @@ img, video, iframe {
     }
     
     .hero {
-        padding: 80px 0 50px;
+        padding: 110px 0 70px;
     }
     
     .hero h1 {
@@ -1833,6 +1833,6 @@ img, video, iframe {
     }
     
     .hero {
-        padding: 100px 0 60px;
+        padding: 130px 0 80px;
     }
 }
