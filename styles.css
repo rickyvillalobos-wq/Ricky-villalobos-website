@@ -458,6 +458,10 @@ img, video, iframe {
     .hero-stat .stat-label {
         font-size: 0.7rem !important;
     }
+    
+    .mobile-only {
+        display: none !important;
+    }
 }
 
 .about p {
