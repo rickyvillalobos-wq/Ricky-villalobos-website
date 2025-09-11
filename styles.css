@@ -250,8 +250,8 @@ img, video, iframe {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), 
-                url('https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+    background: linear-gradient(rgba(17, 24, 39, 0.7), rgba(31, 41, 55, 0.8)), 
+                url('background .png') center/cover no-repeat;
     color: white;
     padding: 160px 0 100px;
     text-align: center;
