@@ -322,8 +322,8 @@ img, video, iframe {
     min-width: 0;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
-    width: clamp(100px, 15vw, 120px);
-    height: clamp(100px, 15vw, 120px);
+    width: clamp(100px, 15vw, 140px);
+    height: clamp(100px, 15vw, 140px);
     padding: clamp(0.5rem, 2vw, 0.8rem);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -332,7 +332,7 @@ img, video, iframe {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
     font-weight: 700;
     margin-bottom: clamp(0.1rem, 1vw, 0.3rem);
     color: var(--primary-blue);
@@ -341,7 +341,7 @@ img, video, iframe {
 }
 
 .stat-label {
-    font-size: clamp(0.6rem, 2vw, 0.75rem);
+    font-size: clamp(0.6rem, 1.5vw, 0.7rem);
     color: var(--text-dark);
     line-height: 1.1;
     text-align: center;
