@@ -171,12 +171,46 @@ img, video, iframe {
     font-weight: 600;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(74, 111, 165, 0.3);
+    display: flex;
+    align-items: center;
+    height: fit-content;
 }
 
 .nav-contact .phone:hover {
     background: linear-gradient(135deg, var(--secondary-blue), var(--light-blue));
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(74, 111, 165, 0.4);
+}
+
+.nav-contact {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    height: 100%;
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    height: 100%;
+}
+
+.social-icon {
+    color: var(--primary-blue);
+    font-size: 1.6rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0.5rem;
+}
+
+.social-icon:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
 }
 
 /* Mobile Navigation - Always visible hamburger on mobile */
