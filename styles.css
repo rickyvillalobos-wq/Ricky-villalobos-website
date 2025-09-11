@@ -332,7 +332,7 @@ img, video, iframe {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 0.75rem;
     font-weight: 700;
     margin-bottom: 0.1rem;
     color: var(--primary-blue);
@@ -341,7 +341,7 @@ img, video, iframe {
 }
 
 .stat-label {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
     color: var(--text-dark);
     line-height: 1.1;
     text-align: center;
