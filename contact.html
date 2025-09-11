@@ -179,7 +179,7 @@
 
         // EmailJS initialization
         if (typeof emailjs !== 'undefined') {
-            emailjs.init("3SWfxdnl1lFBYWDi-");
+            emailjs.init("bGxN2QNCvDgD7b7Tp");
         } else {
             console.error('EmailJS library not loaded');
         }
@@ -276,6 +276,7 @@ Submitted: ${new Date().toLocaleString()}`,
                 return;
             }
             
+            console.log('Sending email with params:', templateParams);
             emailjs.send('service_ll15f7k', 'template_cz2jmqw', templateParams)
                 .then(function(response) {
                     alert('Thank you! Your message has been sent successfully. We\'ll get back to you soon.');
