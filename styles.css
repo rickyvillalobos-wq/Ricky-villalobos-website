@@ -1523,6 +1523,11 @@ img, video, iframe {
         padding: 120px 0 80px;
     }
     
+    .hero-buttons .btn {
+        padding: 12px 28px !important;
+        font-size: 1rem !important;
+    }
+    
     .hero-stats {
         gap: 0.5rem;
         max-width: 400px;
