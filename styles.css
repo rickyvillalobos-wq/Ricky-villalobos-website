@@ -410,6 +410,14 @@ img, video, iframe {
         font-size: 2rem;
         white-space: nowrap;
     }
+    
+    .hero-stat .stat-number {
+        font-size: 0.7rem !important;
+    }
+    
+    .hero-stat .stat-label {
+        font-size: 0.5rem !important;
+    }
 }
 
 .about p {
