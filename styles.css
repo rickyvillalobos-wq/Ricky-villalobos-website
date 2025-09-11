@@ -442,6 +442,8 @@ img, video, iframe {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
 }
 
 .cta-section .btn-primary {
@@ -1452,6 +1454,7 @@ img, video, iframe {
     
     .nav-links {
         flex-direction: column;
+        align-items: center;
     }
     
     .services-grid {
