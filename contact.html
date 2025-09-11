@@ -178,7 +178,11 @@
         });
 
         // EmailJS initialization
-        emailjs.init("3SWfxdnl1lFBYWDi-");
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init("3SWfxdnl1lFBYWDi-");
+        } else {
+            console.error('EmailJS library not loaded');
+        }
         
         // Auto-select subject based on URL parameter
         document.addEventListener('DOMContentLoaded', function() {
@@ -228,23 +232,49 @@
             submitBtn.disabled = true;
             
             const formData = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
+                firstName: document.getElementById('firstName').value || '',
+                lastName: document.getElementById('lastName').value || '',
+                email: document.getElementById('email').value || '',
+                phone: document.getElementById('phone').value || '',
+                subject: document.getElementById('subject').value || '',
+                message: document.getElementById('message').value || ''
             };
+            
+            if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+                alert('Please fill in all required fields (First Name, Last Name, Email, and Message).');
+                // Reset button state
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+                return;
+            }
             
             const templateParams = {
                 to_email: 'rickyvillalobos@kw.com',
                 from_name: `${formData.firstName} ${formData.lastName}`,
                 from_email: formData.email,
-                phone: formData.phone || 'Not provided',
-                subject: formData.subject || 'General Inquiry',
-                message: formData.message,
-                submitted_date: new Date().toLocaleString()
+                phone: formData.phone,
+                message: `Contact Form Submission:
+
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
+Subject: ${formData.subject || 'General Inquiry'}
+Message: ${formData.message}
+
+Submitted: ${new Date().toLocaleString()}`,
+                subject: `Contact Form - ${formData.firstName} ${formData.lastName}`
             };
+            
+            if (typeof emailjs === 'undefined') {
+                console.error('EmailJS not available');
+                alert('Email service is not available. Please contact us directly at (571) 454-3438.');
+                // Reset button state
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+                return;
+            }
             
             emailjs.send('service_ll15f7k', 'template_cz2jmqw', templateParams)
                 .then(function(response) {
