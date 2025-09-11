@@ -254,7 +254,7 @@ img, video, iframe {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), 
                 url('background .png') center/cover no-repeat;
     color: white;
-    padding: 160px 0 100px;
+    padding: 200px 0 120px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -524,7 +524,7 @@ img, video, iframe {
 
 /* CTA Section */
 .cta-section {
-    background: #2563eb;
+    background: #374151;
     color: white;
     padding: 80px 0;
     text-align: center;
@@ -553,24 +553,24 @@ img, video, iframe {
 
 .cta-section .btn-primary {
     background: white;
-    color: #2563eb;
+    color: #374151;
     border: 2px solid white;
 }
 
 .cta-section .btn-primary:hover {
     background: #f8fafc;
-    color: #2563eb;
+    color: #374151;
 }
 
 .cta-section .btn-outline {
     background: white;
-    color: #2563eb;
+    color: #374151;
     border: 2px solid white;
 }
 
 .cta-section .btn-outline:hover {
     background: #f8fafc;
-    color: #2563eb;
+    color: #374151;
 }
 
 /* Property Search */
