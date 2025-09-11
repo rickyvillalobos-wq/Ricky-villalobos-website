@@ -412,8 +412,9 @@ img, video, iframe {
     }
     
     .hero-stat {
-        width: 130px !important;
-        height: 130px !important;
+        width: 140px !important;
+        height: 140px !important;
+        padding: 0.8rem !important;
     }
     
     .hero-stat .stat-number {
