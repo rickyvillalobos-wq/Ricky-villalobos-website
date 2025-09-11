@@ -457,6 +457,17 @@ img, video, iframe {
     color: #2563eb;
 }
 
+.cta-section .btn-outline {
+    background: white;
+    color: #2563eb;
+    border: 2px solid white;
+}
+
+.cta-section .btn-outline:hover {
+    background: #f8fafc;
+    color: #2563eb;
+}
+
 /* Property Search */
 .property-search,
 .property-search-section {
