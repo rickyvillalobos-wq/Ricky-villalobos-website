@@ -3,6 +3,8 @@
 /* CSS Variables for Gray/Blue Color Scheme */
 :root {
     --primary-blue: #4a6fa5;
+    --primary-color: #2563eb;
+    --secondary-color: #6b8bb8;
     --secondary-blue: #6b8bb8;
     --light-blue: #9bb4d1;
     --dark-gray: #2c3e50;
@@ -1019,12 +1021,12 @@ img, video, iframe {
 }
 
 .performance-card.highlight {
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    background: white;
     border: 2px solid var(--primary-color);
 }
 
 .performance-card.advantage {
-    background: linear-gradient(135deg, #fefefe 0%, #f9fafb 100%);
+    background: white;
 }
 
 .performance-icon {
@@ -1039,6 +1041,10 @@ img, video, iframe {
     color: white;
     font-size: 28px;
     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.performance-icon i {
+    color: white !important;
 }
 
 .performance-stat {
@@ -1068,10 +1074,11 @@ img, video, iframe {
 }
 
 .stat-description {
-    color: var(--text-light);
+    color: #374151;
     margin-bottom: 20px;
     font-size: 16px;
     line-height: 1.5;
+    font-weight: 500;
 }
 
 .benefit-badge {
@@ -1097,12 +1104,13 @@ img, video, iframe {
 }
 
 .vs-label {
-    color: #6b7280;
+    color: #374151;
     font-size: 14px;
     padding: 8px 16px;
     background: #f3f4f6;
     border-radius: 20px;
     font-weight: 500;
+    border: 1px solid #e5e7eb;
 }
 
 .vs-divider {
