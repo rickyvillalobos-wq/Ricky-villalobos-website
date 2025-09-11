@@ -92,12 +92,12 @@
     <section class="featured-reviews">
         <div class="container">
             <h2>What Our Clients Say</h2>
-            <div class="reviews-container">
+            <div class="reviews-pagination">
                 <button class="scroll-btn left" id="scroll-left">
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                <div class="reviews-wrapper">
-                    <div class="reviews-grid" id="reviews-grid">
+                <div class="reviews-pages" id="reviews-pages">
+                    <div class="reviews-grid active" id="page-1">
                 <div class="review-card featured">
                     <div class="review-rating">
                         <i class="fas fa-star"></i>
@@ -193,102 +193,202 @@
                         <span>Home Buyers - Arlington</span>
                     </div>
                 </div>
+                    </div>
 
-                <div class="review-card">
-                    <div class="review-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>"Incredible Market Knowledge"</h3>
-                    <p>"Ricky's expertise in the NoVA market is unmatched. He helped us understand neighborhood trends, pricing strategies, and timing. His advice saved us from making a costly mistake and led us to the perfect home at the right price."</p>
-                    <div class="review-author">
-                        <strong>Kevin & Patricia H.</strong>
-                        <span>Home Buyers - Vienna</span>
-                    </div>
-                </div>
+                    <div class="reviews-grid" id="page-2">
+                        <div class="review-card">
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>"Incredible Market Knowledge"</h3>
+                            <p>"Ricky's expertise in the NoVA market is unmatched. He helped us understand neighborhood trends, pricing strategies, and timing. His advice saved us from making a costly mistake and led us to the perfect home at the right price."</p>
+                            <div class="review-author">
+                                <strong>Kevin & Patricia H.</strong>
+                                <span>Home Buyers - Vienna</span>
+                            </div>
+                        </div>
 
-                <div class="review-card">
-                    <div class="review-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>"Seamless Rental Process"</h3>
-                    <p>"Finding a rental in this competitive market seemed impossible until we worked with the 12:45 Team. They had access to properties before they hit the market and handled all the paperwork efficiently. Moved in within two weeks!"</p>
-                    <div class="review-author">
-                        <strong>Michelle & Tyler B.</strong>
-                        <span>Renters - Falls Church</span>
-                    </div>
-                </div>
+                        <div class="review-card">
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>"Seamless Rental Process"</h3>
+                            <p>"Finding a rental in this competitive market seemed impossible until we worked with the 12:45 Team. They had access to properties before they hit the market and handled all the paperwork efficiently. Moved in within two weeks!"</p>
+                            <div class="review-author">
+                                <strong>Michelle & Tyler B.</strong>
+                                <span>Renters - Falls Church</span>
+                            </div>
+                        </div>
 
-                <div class="review-card">
-                    <div class="review-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>"Top-Notch Staging Service"</h3>
-                    <p>"The staging service transformed our home completely! What seemed outdated and cramped became modern and spacious. The professional photography captured everything perfectly. Our home sold in 5 days with multiple offers."</p>
-                    <div class="review-author">
-                        <strong>Thomas & Rachel W.</strong>
-                        <span>Home Sellers - Reston</span>
-                    </div>
-                </div>
+                        <div class="review-card">
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>"Top-Notch Staging Service"</h3>
+                            <p>"The staging service transformed our home completely! What seemed outdated and cramped became modern and spacious. The professional photography captured everything perfectly. Our home sold in 5 days with multiple offers."</p>
+                            <div class="review-author">
+                                <strong>Thomas & Rachel W.</strong>
+                                <span>Home Sellers - Reston</span>
+                            </div>
+                        </div>
 
-                <div class="review-card">
-                    <div class="review-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>"Efficient Junk Removal"</h3>
-                    <p>"Before listing our home, we needed to clear out years of accumulated items. The 12:45 Team's junk removal service was fast, professional, and eco-friendly. They donated what they could and disposed of everything else responsibly."</p>
-                    <div class="review-author">
-                        <strong>Frank & Gloria S.</strong>
-                        <span>Home Sellers - McLean</span>
-                    </div>
-                </div>
+                        <div class="review-card">
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>"Efficient Junk Removal"</h3>
+                            <p>"Before listing our home, we needed to clear out years of accumulated items. The 12:45 Team's junk removal service was fast, professional, and eco-friendly. They donated what they could and disposed of everything else responsibly."</p>
+                            <div class="review-author">
+                                <strong>Frank & Gloria S.</strong>
+                                <span>Home Sellers - McLean</span>
+                            </div>
+                        </div>
 
-                <div class="review-card">
-                    <div class="review-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>"Reliable Contractor Network"</h3>
-                    <p>"The contractors Ricky connected us with were outstanding. Quality work, fair pricing, and completed on schedule. Having trusted professionals made our home improvements stress-free and added significant value to our property."</p>
-                    <div class="review-author">
-                        <strong>Brian & Laura C.</strong>
-                        <span>Homeowners - Herndon</span>
-                    </div>
-                </div>
+                        <div class="review-card">
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>"Reliable Contractor Network"</h3>
+                            <p>"The contractors Ricky connected us with were outstanding. Quality work, fair pricing, and completed on schedule. Having trusted professionals made our home improvements stress-free and added significant value to our property."</p>
+                            <div class="review-author">
+                                <strong>Brian & Laura C.</strong>
+                                <span>Homeowners - Herndon</span>
+                            </div>
+                        </div>
 
-                <div class="review-card">
-                    <div class="review-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <div class="review-card">
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>"Excellent Investment Guidance"</h3>
+                            <p>"As first-time investors, we needed someone who understood rental property potential. Ricky analyzed cash flow, appreciation prospects, and neighborhood trends. Our investment property is performing exactly as projected."</p>
+                            <div class="review-author">
+                                <strong>Daniel & Sophie M.</strong>
+                                <span>Property Investors - Centreville</span>
+                            </div>
+                        </div>
                     </div>
-                    <h3>"Excellent Investment Guidance"</h3>
-                    <p>"As first-time investors, we needed someone who understood rental property potential. Ricky analyzed cash flow, appreciation prospects, and neighborhood trends. Our investment property is performing exactly as projected."</p>
-                    <div class="review-author">
-                        <strong>Daniel & Sophie M.</strong>
-                        <span>Property Investors - Centreville</span>
-                    </div>
-                </div>
+
+                    <div class="reviews-grid" id="page-3">
+                        <div class="review-card">
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>"Amazing Property Management"</h3>
+                            <p>"We own multiple rental properties and the 12:45 Team manages them flawlessly. Rent collection is always on time, maintenance is handled promptly, and their monthly reports give us complete transparency. Zero vacancy issues in two years!"</p>
+                            <div class="review-author">
+                                <strong>Richard & Susan K.</strong>
+                                <span>Property Investors - Ashburn</span>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>"Perfect Timing & Coordination"</h3>
+                            <p>"Selling and buying simultaneously seemed impossible, but Ricky made it work perfectly. The timing was coordinated flawlessly - we closed on our sale in the morning and moved into our new home that afternoon. Incredible service!"</p>
+                            <div class="review-author">
+                                <strong>Mark & Jennifer D.</strong>
+                                <span>Home Buyers & Sellers - Sterling</span>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>"Exceptional First Home Experience"</h3>
+                            <p>"As first-time homebuyers, we were nervous about the entire process. Ricky walked us through every step, explained everything clearly, and made sure we understood our options. We felt confident and supported throughout."</p>
+                            <div class="review-author">
+                                <strong>Alex & Priya S.</strong>
+                                <span>First-Time Buyers - Leesburg</span>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>"Outstanding Communication"</h3>
+                            <p>"Ricky and his team kept us informed every step of the way. Quick responses to calls and texts, regular updates on showings and feedback, and always available when we had questions. Communication was absolutely flawless."</p>
+                            <div class="review-author">
+                                <strong>Greg & Michelle T.</strong>
+                                <span>Home Sellers - Potomac Falls</span>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>"Professional Lawn Service"</h3>
+                            <p>"The 12:45 Team doesn't just handle real estate - their lawn cutting service kept our property looking perfect during the selling process. Reliable, professional, and reasonably priced. Made all the difference for curb appeal."</p>
+                            <div class="review-author">
+                                <strong>William & Carol B.</strong>
+                                <span>Homeowners - Great Falls</span>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>"Comprehensive Real Estate Service"</h3>
+                            <p>"From initial consultation to final closing, the 12:45 Team handled everything professionally. Their network of contractors, photographers, and service providers made the entire process seamless. Truly a one-stop solution."</p>
+                            <div class="review-author">
+                                <strong>Paul & Linda M.</strong>
+                                <span>Home Sellers - Fairfax Station</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <button class="scroll-btn right" id="scroll-right">
@@ -366,45 +466,6 @@
         </div>
     </section>
 
-    <!-- Awards & Recognition -->
-    <section class="awards-section">
-        <div class="container">
-            <h2>Awards & Recognition</h2>
-            <div class="awards-grid">
-                <div class="award-card">
-                    <div class="award-icon">
-                        <i class="fas fa-medal"></i>
-                    </div>
-                    <h3>#8 Team in NoVA/MD</h3>
-                    <p>Ranked #8 out of over 20,000 real estate teams in Northern Virginia and Maryland</p>
-                </div>
-
-                <div class="award-card">
-                    <div class="award-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3>#260 Worldwide</h3>
-                    <p>Ranked #260 among 140,000+ Keller Williams agents worldwide</p>
-                </div>
-
-                <div class="award-card">
-                    <div class="award-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3>Top 1% Performance</h3>
-                    <p>Consistently ranked in the top 1% of real estate professionals</p>
-                </div>
-
-                <div class="award-card">
-                    <div class="award-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>Client Choice Award</h3>
-                    <p>98% client satisfaction rate based on post-transaction surveys</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
@@ -429,47 +490,44 @@
         // EmailJS initialization
         emailjs.init("3SWfxdnl1lFBYWDi-");
 
-        // Reviews scroll functionality
-        const reviewsGrid = document.getElementById('reviews-grid');
+        // Reviews pagination functionality
         const scrollLeftBtn = document.getElementById('scroll-left');
         const scrollRightBtn = document.getElementById('scroll-right');
+        const reviewPages = document.querySelectorAll('.reviews-grid');
         
-        let currentIndex = 0;
-        const reviewCards = document.querySelectorAll('.review-card');
-        const totalReviews = reviewCards.length;
-        const reviewsPerView = 3;
+        let currentPage = 0;
+        const totalPages = reviewPages.length;
         
         function updateScrollButtons() {
-            scrollLeftBtn.disabled = currentIndex === 0;
-            scrollRightBtn.disabled = currentIndex >= totalReviews - reviewsPerView;
+            scrollLeftBtn.disabled = currentPage === 0;
+            scrollRightBtn.disabled = currentPage >= totalPages - 1;
+        }
+        
+        function showPage(pageIndex) {
+            reviewPages.forEach((page, index) => {
+                page.classList.toggle('active', index === pageIndex);
+            });
         }
         
         scrollRightBtn.addEventListener('click', function() {
-            if (currentIndex < totalReviews - reviewsPerView) {
-                currentIndex++;
-                const scrollAmount = currentIndex * (reviewCards[0].offsetWidth + 20); // 20px gap
-                reviewsGrid.scrollTo({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-                });
+            if (currentPage < totalPages - 1) {
+                currentPage++;
+                showPage(currentPage);
                 updateScrollButtons();
             }
         });
         
         scrollLeftBtn.addEventListener('click', function() {
-            if (currentIndex > 0) {
-                currentIndex--;
-                const scrollAmount = currentIndex * (reviewCards[0].offsetWidth + 20); // 20px gap
-                reviewsGrid.scrollTo({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-                });
+            if (currentPage > 0) {
+                currentPage--;
+                showPage(currentPage);
                 updateScrollButtons();
             }
         });
         
-        // Initialize scroll buttons
+        // Initialize pagination
         updateScrollButtons();
+        showPage(0);
 
         // Review form submission
         document.getElementById('review-form').addEventListener('submit', function(event) {

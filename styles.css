@@ -1570,23 +1570,29 @@ img, video, iframe {
 }
 
 /* Reviews scroll functionality */
-.reviews-container {
+.reviews-pagination {
     position: relative;
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-top: 2rem;
 }
 
-.reviews-wrapper {
+.reviews-pages {
     overflow: hidden;
     flex: 1;
+    position: relative;
 }
 
 .reviews-grid {
-    display: flex;
-    gap: 20px;
-    scroll-behavior: smooth;
-    transition: transform 0.3s ease;
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    transition: opacity 0.3s ease;
+}
+
+.reviews-grid.active {
+    display: grid;
 }
 
 .scroll-btn {
@@ -1712,23 +1718,23 @@ img, video, iframe {
 
 /* Mobile responsive adjustments for reviews */
 @media (max-width: 768px) {
-    .reviews-container {
+    .reviews-pagination {
         flex-direction: column;
         gap: 1rem;
     }
     
-    .scroll-btn {
-        display: none; /* Hide scroll buttons on mobile, use touch scroll */
-    }
-    
-    .reviews-wrapper {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-    
     .reviews-grid {
-        width: max-content;
-        padding-bottom: 1rem;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .reviews-grid.active {
+        display: grid;
+    }
+    
+    .scroll-btn {
+        width: 40px;
+        height: 40px;
     }
     
     .form-row {
