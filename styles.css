@@ -412,11 +412,11 @@ img, video, iframe {
     }
     
     .hero-stat .stat-number {
-        font-size: 0.7rem !important;
+        font-size: 0.85rem !important;
     }
     
     .hero-stat .stat-label {
-        font-size: 0.5rem !important;
+        font-size: 0.6rem !important;
     }
 }
 
