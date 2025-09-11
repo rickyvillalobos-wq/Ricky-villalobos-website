@@ -1,19 +1,22 @@
 /* ELEGANT GRAY/BLUE REAL ESTATE WEBSITE */
 
-/* CSS Variables for Gray/Blue Color Scheme */
+/* CSS Variables for Modern Dark/Blue Color Scheme */
 :root {
-    --primary-blue: #4a6fa5;
-    --primary-color: #2563eb;
-    --secondary-color: #6b8bb8;
-    --secondary-blue: #6b8bb8;
-    --light-blue: #9bb4d1;
-    --dark-gray: #2c3e50;
-    --medium-gray: #5d6d7e;
-    --light-gray: #bdc3c7;
-    --soft-gray: #f4f6f8;
+    --primary-blue: #3b82f6;
+    --primary-color: #1e40af;
+    --secondary-color: #64748b;
+    --secondary-blue: #475569;
+    --light-blue: #60a5fa;
+    --dark-gray: #1e293b;
+    --medium-gray: #334155;
+    --light-gray: #64748b;
+    --soft-gray: #f8fafc;
+    --darker-bg: #0f172a;
+    --dark-surface: #1e293b;
     --white: #ffffff;
-    --text-dark: #2c3e50;
-    --text-light: #5d6d7e;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --accent-gold: #f59e0b;
 }
 
 /* Reset */
@@ -32,7 +35,7 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     overflow-x: hidden;
-    background: linear-gradient(180deg, var(--white) 0%, var(--soft-gray) 100%);
+    background: linear-gradient(180deg, var(--white) 0%, var(--soft-gray) 50%, var(--darker-bg) 100%);
 }
 
 /* Universal responsive images */
@@ -89,14 +92,15 @@ img, video, iframe {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(15px);
     z-index: 1000;
     padding: 0.5rem 0;
-    box-shadow: 0 4px 20px rgba(71, 100, 130, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     left: 0;
     right: 0;
     transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .nav-container {
