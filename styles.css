@@ -215,7 +215,7 @@ img, video, iframe {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), 
                 url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2053&q=80') center/cover no-repeat;
     color: white;
-    padding: 100px 0 80px;
+    padding: 140px 0 80px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -361,6 +361,31 @@ img, video, iframe {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     line-height: 1.2;
+}
+
+/* Responsive Design - split screen and medium screens */
+@media (max-width: 1200px) and (min-width: 769px) {
+    .nav-container {
+        padding: 0 20px;
+        flex-wrap: nowrap;
+    }
+    
+    .nav-contact .phone {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+        min-width: fit-content;
+    }
+    
+    .reviews-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .hero {
+        padding: 120px 0 60px;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -1236,15 +1261,19 @@ img, video, iframe {
 
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .review-card {
     background: #f8fafc;
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 1.8rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .review-card.featured {
@@ -1381,9 +1410,17 @@ img, video, iframe {
     }
     
     .nav-contact .phone {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.4rem 0.7rem;
+        font-size: 0.8rem;
         white-space: nowrap;
+        min-width: fit-content;
+        display: inline-block;
+    }
+    
+    .nav-container {
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        align-items: center;
     }
     
     .nav-menu {
@@ -1506,8 +1543,17 @@ img, video, iframe {
     }
     
     .nav-contact .phone {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        min-width: fit-content;
+    }
+    
+    .nav-container {
+        padding: 0 10px;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
     }
     
     .hero {
@@ -1725,7 +1771,18 @@ img, video, iframe {
     
     .reviews-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1rem;
+        padding: 0 1rem;
+        width: 100%;
+    }
+    
+    .review-card {
+        padding: 1.2rem;
+        max-width: none;
+        margin: 0;
+        min-height: auto;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     .reviews-grid.active {
@@ -1744,5 +1801,38 @@ img, video, iframe {
     
     .review-form {
         padding: 1.5rem;
+    }
+}
+
+/* Additional responsive fixes for split screen and small windows */
+@media (max-width: 1000px) {
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
+    .nav-container {
+        padding: 0 15px;
+        min-height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+    
+    .nav-contact .phone {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+        border-radius: 15px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    
+    .nav-logo {
+        flex-shrink: 1;
+        min-width: 0;
+    }
+    
+    .hero {
+        padding: 100px 0 60px;
     }
 }
