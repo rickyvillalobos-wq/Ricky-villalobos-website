@@ -229,7 +229,7 @@
             
             const formData = new FormData(event.target);
             const templateParams = {
-                to_email: 'Rickyvillalobos@kw.com',
+                to_email: 'rickyvillalobos@kw.com',
                 from_name: `${formData.get('firstName')} ${formData.get('lastName')}`,
                 from_email: formData.get('email'),
                 phone: formData.get('phone') || 'Not provided',
@@ -244,6 +244,7 @@
                     event.target.reset();
                 })
                 .catch(function(error) {
+                    console.error('EmailJS Error:', error);
                     alert('There was an issue sending your message. Please try again or contact us directly at (571) 454-3438.');
                 })
                 .finally(function() {
