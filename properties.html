@@ -317,6 +317,7 @@ Submitted: ${new Date().toLocaleString()}`,
                     document.getElementById('notes').value = '';
                 })
                 .catch(function(error) {
+                    console.error('EmailJS Error:', error);
                     alert('There was an issue sending your request. Please try again or contact Ricky directly at (571) 454-3438.');
                 })
                 .finally(function() {
