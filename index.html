@@ -122,10 +122,10 @@
         <div class="container">
             <h2>Get Custom Listing Alerts</h2>
             <p>Tell us what you're looking for, and we'll email you when new properties match your criteria.</p>
-            <p style="text-align: center; margin-top: 2rem;">
-                <a href="properties.html" class="btn btn-primary" style="display: inline-block; margin-right: 1rem;">View Detailed Property Search</a>
+            <div style="text-align: center; margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="properties.html" class="btn btn-primary">View Detailed Property Search</a>
                 <a href="services.html" class="btn btn-outline">Explore All Services</a>
-            </p>
+            </div>
             <div class="search-form">
                 <div class="contact-info-section">
                     <h3>Your Contact Information</h3>
@@ -149,6 +149,53 @@
                             <input type="email" id="email-address" placeholder="your.email@example.com">
                         </div>
                     </div>
+                    
+                    <h3>Property Preferences (Optional)</h3>
+                    <div class="search-row">
+                        <div class="search-group">
+                            <label>Location/Area</label>
+                            <input type="text" id="location" placeholder="e.g., Fairfax, Arlington, Alexandria">
+                        </div>
+                        <div class="search-group">
+                            <label>Price Range</label>
+                            <select id="price-range">
+                                <option value="">Any Price</option>
+                                <option value="0-300000">Under $300,000</option>
+                                <option value="300000-500000">$300,000 - $500,000</option>
+                                <option value="500000-700000">$500,000 - $700,000</option>
+                                <option value="700000-1000000">$700,000 - $1,000,000</option>
+                                <option value="1000000+">$1,000,000+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="search-row">
+                        <div class="search-group">
+                            <label>Bedrooms</label>
+                            <select id="bedrooms">
+                                <option value="">Any</option>
+                                <option value="1+">1+</option>
+                                <option value="2+">2+</option>
+                                <option value="3+">3+</option>
+                                <option value="4+">4+</option>
+                                <option value="5+">5+</option>
+                            </select>
+                        </div>
+                        <div class="search-group">
+                            <label>Bathrooms</label>
+                            <select id="bathrooms">
+                                <option value="">Any</option>
+                                <option value="1+">1+</option>
+                                <option value="2+">2+</option>
+                                <option value="3+">3+</option>
+                                <option value="4+">4+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="search-group">
+                        <label>Additional Notes</label>
+                        <textarea id="notes" placeholder="Any specific requirements or preferences..." rows="3"></textarea>
+                    </div>
+                    
                     <button type="button" class="search-btn" onclick="handleListingAlertsSubmit(event)">Set Up My Listing Alerts</button>
                 </div>
             </div>
@@ -197,7 +244,12 @@
                 firstName: document.getElementById('first-name')?.value || '',
                 lastName: document.getElementById('last-name')?.value || '',
                 phone: document.getElementById('phone-number')?.value || '',
-                email: document.getElementById('email-address')?.value || ''
+                email: document.getElementById('email-address')?.value || '',
+                location: document.getElementById('location')?.value || '',
+                priceRange: document.getElementById('price-range')?.value || '',
+                bedrooms: document.getElementById('bedrooms')?.value || '',
+                bathrooms: document.getElementById('bathrooms')?.value || '',
+                notes: document.getElementById('notes')?.value || ''
             };
             
             if (!formData.firstName || !formData.lastName || !formData.phone) {
@@ -210,6 +262,13 @@
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
             
+            let propertyPreferences = '';
+            if (formData.location) propertyPreferences += `Location: ${formData.location}\n`;
+            if (formData.priceRange) propertyPreferences += `Price Range: ${formData.priceRange}\n`;
+            if (formData.bedrooms) propertyPreferences += `Bedrooms: ${formData.bedrooms}\n`;
+            if (formData.bathrooms) propertyPreferences += `Bathrooms: ${formData.bathrooms}\n`;
+            if (formData.notes) propertyPreferences += `Additional Notes: ${formData.notes}\n`;
+            
             const templateParams = {
                 to_email: 'rickyvillalobos@kw.com',
                 from_name: `${formData.firstName} ${formData.lastName}`,
@@ -220,6 +279,9 @@
 Name: ${formData.firstName} ${formData.lastName}
 Email: ${formData.email}
 Phone: ${formData.phone}
+
+Property Preferences:
+${propertyPreferences || 'No specific preferences provided'}
 
 Submitted: ${new Date().toLocaleString()}`,
                 subject: `Website Listing Alerts Signup - ${formData.firstName} ${formData.lastName}`
@@ -233,6 +295,11 @@ Submitted: ${new Date().toLocaleString()}`,
                     document.getElementById('last-name').value = '';
                     document.getElementById('phone-number').value = '';
                     document.getElementById('email-address').value = '';
+                    document.getElementById('location').value = '';
+                    document.getElementById('price-range').value = '';
+                    document.getElementById('bedrooms').value = '';
+                    document.getElementById('bathrooms').value = '';
+                    document.getElementById('notes').value = '';
                 })
                 .catch(function(error) {
                     alert('There was an issue sending your request. Please try again or contact Ricky directly at (571) 454-3438.');
