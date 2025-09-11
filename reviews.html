@@ -444,7 +444,7 @@
         });
 
         // EmailJS initialization
-        emailjs.init("3SWfxdnl1lFBYWDi-");
+        emailjs.init("bGxN2QNCvDgD7b7Tp");
 
         // Reviews pagination functionality
         const scrollLeftBtn = document.getElementById('scroll-left');
@@ -500,7 +500,7 @@
             
             const formData = new FormData(event.target);
             const templateParams = {
-                to_email: 'Rickyvillalobos@kw.com',
+                to_email: 'rickyvillalobos@kw.com',
                 reviewer_name: formData.get('reviewerName'),
                 reviewer_email: formData.get('reviewerEmail'),
                 service_type: formData.get('serviceType') || 'Not specified',
@@ -516,6 +516,7 @@
                     event.target.reset();
                 })
                 .catch(function(error) {
+                    console.error('EmailJS Error:', error);
                     alert('There was an issue submitting your review. Please try again or contact us directly at (571) 454-3438.');
                 })
                 .finally(function() {
