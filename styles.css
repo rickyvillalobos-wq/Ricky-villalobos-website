@@ -254,7 +254,7 @@ img, video, iframe {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), 
                 url('background .png') center/cover no-repeat;
     color: white;
-    padding: 200px 0 120px;
+    padding: 140px 0 80px;
     text-align: center;
     position: relative;
     overflow: hidden;
