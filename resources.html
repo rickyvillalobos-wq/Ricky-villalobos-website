@@ -7,469 +7,16 @@
     
     <meta name="description" content="Real Estate Resources by Ricky Villalobos - Buyer's Guide, Seller's Guide, Home Valuation & Market Insights in Northern Virginia.">
     
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #fff;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Navigation - Same as other pages */
-        .navbar {
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .nav-logo h2 {
-            color: #2563eb;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .nav-logo a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .team-name {
-            color: #666;
-            font-size: 0.9rem;
-            font-weight: 400;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .nav-link {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-link:hover, .nav-link.active {
-            color: #2563eb;
-        }
-        
-        .nav-contact .phone {
-            background: #2563eb;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-        
-        .nav-contact .phone:hover {
-            background: #1d4ed8;
-        }
-        
-        /* Mobile Menu */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 4px;
-        }
-        
-        .hamburger .bar {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            transition: 0.3s;
-        }
-        
-        /* Page Header */
-        .page-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 140px 0 80px;
-            text-align: center;
-        }
-        
-        .page-header h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        
-        .page-header p {
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        /* Resources Grid */
-        .resources {
-            padding: 80px 0;
-            background: #f8fafc;
-        }
-        
-        .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-        
-        .resource-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-        }
-        
-        .resource-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-        
-        .resource-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-        }
-        
-        .resource-icon i {
-            font-size: 2rem;
-            color: white;
-        }
-        
-        .resource-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #1e293b;
-        }
-        
-        .resource-card p {
-            color: #64748b;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-        
-        .btn-outline {
-            background: transparent;
-            color: #2563eb;
-            border: 2px solid #2563eb;
-        }
-        
-        .btn-outline:hover {
-            background: #2563eb;
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .btn-primary {
-            background: #2563eb;
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: #1d4ed8;
-            transform: translateY(-2px);
-        }
-        
-        /* Detailed Sections */
-        .resource-detail {
-            padding: 80px 0;
-            background: white;
-        }
-        
-        .resource-detail:nth-child(even) {
-            background: #f8fafc;
-        }
-        
-        .resource-detail h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #1e293b;
-        }
-        
-        .detail-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-            margin-bottom: 3rem;
-        }
-        
-        .detail-text h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: #1e293b;
-        }
-        
-        .detail-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #64748b;
-            margin-bottom: 2rem;
-        }
-        
-        .feature-list {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-        
-        .feature-list li {
-            color: #64748b;
-            margin-bottom: 1rem;
-            position: relative;
-            padding-left: 2rem;
-            line-height: 1.6;
-        }
-        
-        .feature-list li:before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: #2563eb;
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-        }
-        
-        .highlight-box h4 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        
-        .highlight-box ul {
-            list-style: none;
-            margin: 1rem 0;
-        }
-        
-        .highlight-box li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .highlight-box li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            font-weight: 600;
-        }
-        
-        .detail-image {
-            text-align: center;
-        }
-        
-        .detail-image img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        
-        /* Market Stats */
-        .market-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
-        }
-        
-        .stat-box {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #2563eb;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        
-        .stat-label {
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-        
-        /* Contact Section */
-        .contact {
-            background: #1e293b;
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .contact h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        
-        .contact > .container > p {
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            opacity: 0.9;
-        }
-        
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            font-size: 1.1rem;
-        }
-        
-        .contact-item i {
-            font-size: 1.5rem;
-            color: #60a5fa;
-        }
-        
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                gap: 1rem;
-            }
-            
-            .nav-menu.active {
-                display: flex;
-            }
-            
-            .hamburger {
-                display: flex;
-            }
-            
-            .resources-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .detail-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .market-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .contact-info {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 15px;
-            }
-            
-            .page-header {
-                padding: 120px 0 60px;
-            }
-            
-            .resources, .resource-detail, .contact {
-                padding: 60px 0;
-            }
-            
-            .resource-card {
-                padding: 2rem;
-            }
-            
-            .market-stats {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2><a href="index.html">Ricky Villalobos</a></h2>
+                <h2><a href="index.html" style="text-decoration: none; color: inherit;">Ricky Villalobos</a></h2>
                 <span class="team-name">12:45 Team</span>
             </div>
             <ul class="nav-menu" id="nav-menu">
@@ -492,231 +39,114 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Resources Hero Section -->
+    <section class="hero">
         <div class="container">
-            <h1>Resources</h1>
-            <p>Expert guides and tools to help you navigate the Northern Virginia real estate market</p>
+            <div class="hero-content">
+                <h1>Real Estate Resources</h1>
+                <p>Expert guides and tools to help you navigate the Northern Virginia real estate market with confidence and success.</p>
+            </div>
         </div>
     </section>
 
     <!-- Resources Overview -->
-    <section class="resources">
+    <section class="featured-areas">
         <div class="container">
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <div class="resource-icon">
-                        <i class="fas fa-search"></i>
+            <h2>How Can We Help You?</h2>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <img src="dc-home.jpeg" alt="Home Buying Guide" class="area-image">
+                    <div class="area-content">
+                        <h3>Looking to Buy?</h3>
+                        <p>Navigate your home buying journey with our comprehensive buyer's guide and market insights.</p>
+                        <ul class="area-highlights">
+                            <li>Pre-approval assistance</li>
+                            <li>Exclusive MLS access</li>
+                            <li>First-time buyer programs</li>
+                        </ul>
                     </div>
-                    <h3>Looking to Buy?</h3>
-                    <p>Navigate your home buying journey with our comprehensive buyer's guide and market insights.</p>
-                    <a href="#buyers" class="btn btn-outline">Learn More</a>
                 </div>
-                <div class="resource-card">
-                    <div class="resource-icon">
+
+                <div class="area-card">
+                    <img src="dc-home.jpeg" alt="Home Selling Guide" class="area-image">
+                    <div class="area-content">
+                        <h3>Looking to Sell?</h3>
+                        <p>Maximize your home's value with our proven selling strategies and market expertise.</p>
+                        <ul class="area-highlights">
+                            <li>Professional photography</li>
+                            <li>Strategic pricing analysis</li>
+                            <li>Expert negotiation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="area-card">
+                    <img src="dc-home.jpeg" alt="Property Valuation" class="area-image">
+                    <div class="area-content">
+                        <h3>Property Valuation</h3>
+                        <p>Get an accurate assessment of your property's current market value with our analysis.</p>
+                        <ul class="area-highlights">
+                            <li>Comprehensive market analysis</li>
+                            <li>Recent sales comparisons</li>
+                            <li>Current market trends</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Insights -->
+    <section class="market-insights">
+        <div class="container">
+            <h2>Northern Virginia Market Insights</h2>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Market Trends</h3>
+                    <p>Stay informed about the latest market conditions, pricing trends, and inventory levels in Northern Virginia's competitive real estate market.</p>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">
                         <i class="fas fa-home"></i>
                     </div>
-                    <h3>Looking to Sell?</h3>
-                    <p>Maximize your home's value with our proven selling strategies and market expertise.</p>
-                    <a href="#sellers" class="btn btn-outline">Learn More</a>
+                    <h3>Neighborhood Guides</h3>
+                    <p>Discover the unique characteristics, amenities, and lifestyle benefits of different communities throughout Northern Virginia.</p>
                 </div>
-                <div class="resource-card">
-                    <div class="resource-icon">
+
+                <div class="insight-card">
+                    <div class="insight-icon">
                         <i class="fas fa-calculator"></i>
                     </div>
-                    <h3>Property Valuation</h3>
-                    <p>Get an accurate assessment of your property's current market value with our analysis.</p>
-                    <a href="#valuation" class="btn btn-outline">Get Valuation</a>
+                    <h3>Financial Tools</h3>
+                    <p>Access mortgage calculators, down payment assistance programs, and financing options to help you plan your real estate investment.</p>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Expert Tips</h3>
+                    <p>Benefit from our team's experience with insider tips on timing, negotiations, and strategies for success in today's market.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Buyer's Guide -->
-    <section id="buyers" class="resource-detail">
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <h2>Home Buyer's Guide</h2>
-            <div class="detail-content">
-                <div class="detail-text">
-                    <h3>Your Complete Guide to Buying in Northern Virginia</h3>
-                    <p>Buying a home is one of life's biggest decisions. The 12:45 Team, ranked #8 in Northern Virginia/Maryland, provides expert guidance through every step of your home buying journey.</p>
-                    
-                    <ul class="feature-list">
-                        <li><strong>Pre-Approval Process:</strong> Get pre-approved for financing and understand your budget before you start shopping</li>
-                        <li><strong>Market Search:</strong> Access exclusive MLS listings and off-market properties in prime locations</li>
-                        <li><strong>Property Tours:</strong> Schedule private showings and virtual tours with detailed market analysis</li>
-                        <li><strong>Offer Strategy:</strong> Craft competitive offers with expert negotiation strategies</li>
-                        <li><strong>Inspection Process:</strong> Professional inspections with detailed explanations and repair negotiations</li>
-                        <li><strong>Closing Support:</strong> Complete guidance through all paperwork and final walk-through</li>
-                    </ul>
-                    
-                    <div class="highlight-box">
-                        <h4><i class="fas fa-lightbulb"></i> First-Time Buyer Programs</h4>
-                        <ul>
-                            <li>VA Loans for Veterans (0% down payment)</li>
-                            <li>FHA Loans with low down payments (3.5%)</li>
-                            <li>USDA Rural Development loans</li>
-                            <li>State and local down payment assistance</li>
-                            <li>Conventional loans with as little as 3% down</li>
-                        </ul>
-                    </div>
-                    
-                    <a href="contact.html" class="btn btn-primary">Start Your Home Search</a>
-                </div>
-                <div class="detail-image">
-                    <div class="market-stats">
-                        <div class="stat-box">
-                            <span class="stat-number">15</span>
-                            <span class="stat-label">Avg Days on Market</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-number">98%</span>
-                            <span class="stat-label">Client Satisfaction</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-number">500+</span>
-                            <span class="stat-label">Homes Sold</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-number">#8</span>
-                            <span class="stat-label">Team Ranking NoVA</span>
-                        </div>
-                    </div>
+            <div class="cta-content">
+                <h2>Ready to Get Started?</h2>
+                <p>Contact us today for personalized guidance and expert assistance with all your real estate needs</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+                    <a href="tel:571-454-3438" class="btn btn-outline">Call Now</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Seller's Guide -->
-    <section id="sellers" class="resource-detail">
-        <div class="container">
-            <h2>Home Seller's Guide</h2>
-            <div class="detail-content">
-                <div class="detail-text">
-                    <h3>Maximize Your Home's Value with Expert Marketing</h3>
-                    <p>As one of the top 1% of real estate teams in Northern Virginia, the 12:45 Team knows how to sell homes fast and for top dollar. Our comprehensive marketing strategy gets results.</p>
-                    
-                    <ul class="feature-list">
-                        <li><strong>Market Analysis:</strong> Comprehensive pricing strategy based on recent sales and current market trends</li>
-                        <li><strong>Home Preparation:</strong> Professional staging advice and cost-effective improvement recommendations</li>
-                        <li><strong>Marketing Strategy:</strong> Professional photography, virtual tours, and multi-platform advertising</li>
-                        <li><strong>Showing Management:</strong> Coordinated showings with detailed buyer feedback and market insights</li>
-                        <li><strong>Offer Review:</strong> Expert analysis and negotiation of all offers to maximize your return</li>
-                        <li><strong>Transaction Management:</strong> Complete support through inspections, appraisals, and closing</li>
-                    </ul>
-                    
-                    <div class="highlight-box">
-                        <h4><i class="fas fa-trophy"></i> Why Choose the 12:45 Team?</h4>
-                        <ul>
-                            <li>Ranked #8 out of 20,000+ agents in NoVA/MD</li>
-                            <li>Ranked #260 worldwide among 140,000+ KW agents</li>
-                            <li>Average days on market: 15 vs 30 day market average</li>
-                            <li>Average sale price: 99.2% of list price</li>
-                            <li>Professional photography and marketing included</li>
-                        </ul>
-                    </div>
-                    
-                    <a href="contact.html" class="btn btn-primary">Get Your Home's Value</a>
-                </div>
-                <div class="detail-image">
-                    <div class="market-stats">
-                        <div class="stat-box">
-                            <span class="stat-number">99.2%</span>
-                            <span class="stat-label">List to Sale Price</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-number">15</span>
-                            <span class="stat-label">Days on Market</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Marketing Coverage</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-number">24/7</span>
-                            <span class="stat-label">Support Available</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Property Valuation -->
-    <section id="valuation" class="resource-detail">
-        <div class="container">
-            <h2>Free Home Valuation</h2>
-            <div class="detail-content">
-                <div class="detail-text">
-                    <h3>Get Your Property's Current Market Value</h3>
-                    <p>Curious about your home's worth? Our comprehensive market analysis provides an accurate estimate based on recent sales, current market conditions, and your home's unique features.</p>
-                    
-                    <ul class="feature-list">
-                        <li><strong>Comprehensive Analysis:</strong> Recent comparable sales, active listings, and market trends</li>
-                        <li><strong>Neighborhood Insights:</strong> Local market performance, price trends, and inventory levels</li>
-                        <li><strong>Market Conditions:</strong> Current and projected market changes that affect your home's value</li>
-                        <li><strong>Improvement Recommendations:</strong> Specific upgrades and their estimated return on investment</li>
-                        <li><strong>Professional Report:</strong> Detailed valuation with supporting data and market analysis</li>
-                        <li><strong>No Obligation:</strong> Free consultation with no pressure or commitment required</li>
-                    </ul>
-                    
-                    <div class="highlight-box">
-                        <h4><i class="fas fa-gift"></i> What You'll Receive (FREE):</h4>
-                        <ul>
-                            <li>Detailed property valuation report</li>
-                            <li>Comparable sales analysis</li>
-                            <li>Neighborhood market trends</li>
-                            <li>Improvement recommendations</li>
-                            <li>No obligation consultation</li>
-                        </ul>
-                    </div>
-                    
-                    <a href="contact.html" class="btn btn-primary">Request Free Valuation</a>
-                </div>
-                <div class="detail-image">
-                    <div class="market-stats">
-                        <div class="stat-box">
-                            <span class="stat-number">FREE</span>
-                            <span class="stat-label">Market Analysis</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-number">24hr</span>
-                            <span class="stat-label">Turnaround Time</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-number">95%</span>
-                            <span class="stat-label">Accuracy Rate</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-number">1000+</span>
-                            <span class="stat-label">Valuations Done</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact">
-        <div class="container">
-            <h2>Ready to Get Started?</h2>
-            <p>Contact us today to access our resources and get expert guidance for your real estate needs.</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>(571) 454-3438</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>rickyvillalobos@kw.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>4031 University Dr, Fairfax, VA 22030</span>
-                </div>
-            </div>
-            <a href="contact.html" class="btn btn-primary">Get in Touch</a>
         </div>
     </section>
 
@@ -724,20 +154,6 @@
         // Mobile menu toggle
         document.getElementById('hamburger').addEventListener('click', function() {
             document.getElementById('nav-menu').classList.toggle('active');
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
         });
     </script>
 </body>
