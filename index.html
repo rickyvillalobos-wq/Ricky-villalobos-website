@@ -358,10 +358,10 @@ Submitted: ${new Date().toLocaleString()}`,
                 });
         }
         
-        // Show popup after 8 seconds, but only if user is still on the page
+        // Show popup after 6 seconds, but only if user is still on the page
         let popupTimer = setTimeout(() => {
             showEmailPopup();
-        }, 8000);
+        }, 6000);
         
         // Close popup when clicking outside of it
         document.addEventListener('click', function(event) {
