@@ -1781,16 +1781,16 @@ img, video, iframe {
         flex: none !important;
     }
     
-    /* Fix pricing page buttons spacing */
+    /* Fix pricing page buttons - stack vertically with spacing */
     .pricing-section .btn {
-        margin-right: 1.5rem !important;
-        margin-bottom: 0.5rem !important;
-        display: inline-block !important;
-        max-width: 40% !important;
+        display: block !important;
+        margin: 0 auto 1rem auto !important;
+        width: auto !important;
+        max-width: 200px !important;
     }
     
     .pricing-section .btn:last-child {
-        margin-right: 0 !important;
+        margin-bottom: 0 !important;
     }
     
     .nav-contact .phone {
