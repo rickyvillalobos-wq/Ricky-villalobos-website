@@ -237,10 +237,140 @@
         </div>
     </section>
 
+    <!-- Email Subscription Pop-up -->
+    <div id="email-popup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closeEmailPopup()">&times;</button>
+            <div class="popup-header">
+                <h3>Stay Updated on the Market!</h3>
+                <p>Get exclusive market insights, new listings, and real estate tips delivered to your inbox.</p>
+            </div>
+            <form class="popup-form" onsubmit="handleEmailSubscription(event)">
+                <div class="form-group">
+                    <input type="text" id="popup-name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="popup-email" placeholder="Your Email Address" required>
+                </div>
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="market-updates" checked>
+                        <span class="checkmark"></span>
+                        Weekly market updates
+                    </label>
+                </div>
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="new-listings" checked>
+                        <span class="checkmark"></span>
+                        New listing alerts
+                    </label>
+                </div>
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="real-estate-tips">
+                        <span class="checkmark"></span>
+                        Real estate tips & guides
+                    </label>
+                </div>
+                <button type="submit" class="popup-submit-btn">Subscribe Now</button>
+            </form>
+            <p class="popup-disclaimer">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+    </div>
+
     <script>
         // Mobile menu toggle
         document.getElementById('hamburger').addEventListener('click', function() {
             document.getElementById('nav-menu').classList.toggle('active');
+        });
+
+        // Email Pop-up functionality
+        function showEmailPopup() {
+            const popup = document.getElementById('email-popup');
+            const hasShown = localStorage.getItem('emailPopupShown');
+            
+            // Only show if not shown in the last 24 hours
+            if (!hasShown || (Date.now() - parseInt(hasShown)) > 24 * 60 * 60 * 1000) {
+                popup.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        }
+        
+        function closeEmailPopup() {
+            const popup = document.getElementById('email-popup');
+            popup.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            localStorage.setItem('emailPopupShown', Date.now().toString());
+        }
+        
+        function handleEmailSubscription(event) {
+            event.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('popup-name').value,
+                email: document.getElementById('popup-email').value,
+                marketUpdates: document.getElementById('market-updates').checked,
+                newListings: document.getElementById('new-listings').checked,
+                realEstateTips: document.getElementById('real-estate-tips').checked
+            };
+            
+            const submitBtn = event.target.querySelector('.popup-submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Subscribing...';
+            submitBtn.disabled = true;
+            
+            let subscriptionTypes = [];
+            if (formData.marketUpdates) subscriptionTypes.push('Weekly market updates');
+            if (formData.newListings) subscriptionTypes.push('New listing alerts');
+            if (formData.realEstateTips) subscriptionTypes.push('Real estate tips & guides');
+            
+            const templateParams = {
+                to_email: 'rickyvillalobos@kw.com',
+                from_name: formData.name,
+                from_email: formData.email,
+                message: `New Email Subscription:
+
+Name: ${formData.name}
+Email: ${formData.email}
+
+Subscription Preferences:
+${subscriptionTypes.length > 0 ? subscriptionTypes.join('\n') : 'No preferences selected'}
+
+Submitted: ${new Date().toLocaleString()}`,
+                subject: `Website Email Subscription - ${formData.name}`
+            };
+            
+            emailjs.send('service_ll15f7k', 'template_cz2jmqw', templateParams)
+                .then(function(response) {
+                    alert('Thank you for subscribing! You\'ll start receiving updates soon.');
+                    closeEmailPopup();
+                    // Reset form
+                    document.getElementById('popup-name').value = '';
+                    document.getElementById('popup-email').value = '';
+                })
+                .catch(function(error) {
+                    alert('There was an issue with your subscription. Please try again or contact us directly at (571) 454-3438.');
+                })
+                .finally(function() {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+        }
+        
+        // Show popup after 8 seconds, but only if user is still on the page
+        let popupTimer = setTimeout(() => {
+            showEmailPopup();
+        }, 8000);
+        
+        // Close popup when clicking outside of it
+        document.addEventListener('click', function(event) {
+            const popup = document.getElementById('email-popup');
+            const popupContent = popup.querySelector('.popup-content');
+            
+            if (event.target === popup) {
+                closeEmailPopup();
+            }
         });
 
         // EmailJS initialization
