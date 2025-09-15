@@ -1586,16 +1586,23 @@ img, video, iframe {
     
     /* Fix button spacing on tablets */
     .hero-buttons {
-        gap: 1rem !important;
+        display: flex !important;
         flex-direction: row !important;
         justify-content: center !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
+        margin-bottom: 2rem !important;
     }
     
+    .hero .hero-buttons .btn,
     .hero-buttons .btn {
-        padding: 10px 16px !important;
+        width: auto !important;
+        max-width: 160px !important;
+        min-width: 140px !important;
+        padding: 12px 16px !important;
         font-size: 0.85rem !important;
-        flex: 0 0 auto !important;
-        max-width: 45% !important;
+        flex: none !important;
+        margin: 0 !important;
     }
     
     .nav-contact .phone {
@@ -1776,20 +1783,28 @@ img, video, iframe {
         font-size: 0.95rem !important;
     }
     
-    /* Fix button spacing with proper gap */
+    /* Fix button spacing with proper gap - mobile specific */
     .hero-buttons {
-        gap: 0.8rem !important;
+        display: flex !important;
         flex-direction: row !important;
         justify-content: center !important;
         align-items: center !important;
+        gap: 1rem !important;
+        margin-bottom: 2rem !important;
+        width: 100% !important;
     }
     
+    .hero .hero-buttons .btn,
     .hero-buttons .btn {
-        padding: 9px 14px !important;
+        width: auto !important;
+        max-width: 140px !important;
+        min-width: 120px !important;
+        padding: 10px 12px !important;
         font-size: 0.8rem !important;
-        flex: 0 0 auto !important;
-        max-width: 42% !important;
+        flex: none !important;
         white-space: nowrap !important;
+        text-align: center !important;
+        margin: 0 !important;
     }
     
     .nav-contact .phone {
