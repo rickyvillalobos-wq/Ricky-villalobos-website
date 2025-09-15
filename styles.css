@@ -2,11 +2,11 @@
 
 /* CSS Variables for Modern Dark/Blue Color Scheme */
 :root {
-    --primary-blue: #3b82f6;
-    --primary-color: #1e40af;
+    --primary-blue: #64748b;
+    --primary-color: #475569;
     --secondary-color: #64748b;
     --secondary-blue: #475569;
-    --light-blue: #60a5fa;
+    --light-blue: #64748b;
     --dark-gray: #1e293b;
     --medium-gray: #334155;
     --light-gray: #64748b;
@@ -307,14 +307,14 @@ img, video, iframe {
 }
 
 .btn-primary {
-    background: #2563eb;
+    background: #64748b;
     color: white;
 }
 
 /* Hero page specific button styling */
 .hero .btn-primary {
     background: #fff;
-    color: #2563eb;
+    color: #64748b;
 }
 
 .hero .btn-primary:hover {
@@ -2105,7 +2105,7 @@ img, video, iframe {
 .popup-form input[type="text"]:focus,
 .popup-form input[type="email"]:focus {
     outline: none;
-    border-color: #3498db;
+    border-color: #64748b;
 }
 
 .checkbox-group {
@@ -2127,12 +2127,12 @@ img, video, iframe {
 .checkbox-label input[type="checkbox"] {
     width: 18px;
     height: 18px;
-    accent-color: #3498db;
+    accent-color: #64748b;
     cursor: pointer;
 }
 
 .popup-submit-btn {
-    background: linear-gradient(135deg, #3498db, #2980b9);
+    background: linear-gradient(135deg, #64748b, #475569);
     color: white;
     border: none;
     padding: 14px 20px;
