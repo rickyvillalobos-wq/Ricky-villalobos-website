@@ -1783,28 +1783,30 @@ img, video, iframe {
         font-size: 0.95rem !important;
     }
     
-    /* Fix button spacing with proper gap - mobile specific */
+    /* MOBILE BUTTON FIX - Force spacing */
     .hero-buttons {
         display: flex !important;
         flex-direction: row !important;
-        justify-content: center !important;
+        justify-content: space-around !important;
         align-items: center !important;
-        gap: 1rem !important;
+        padding: 0 2rem !important;
         margin-bottom: 2rem !important;
         width: 100% !important;
+        box-sizing: border-box !important;
     }
     
-    .hero .hero-buttons .btn,
-    .hero-buttons .btn {
-        width: auto !important;
-        max-width: 140px !important;
-        min-width: 120px !important;
-        padding: 10px 12px !important;
-        font-size: 0.8rem !important;
+    .hero-buttons a.btn.btn-primary {
+        width: 35% !important;
+        max-width: 130px !important;
+        min-width: 100px !important;
+        padding: 10px 8px !important;
+        font-size: 0.75rem !important;
         flex: none !important;
         white-space: nowrap !important;
         text-align: center !important;
         margin: 0 !important;
+        box-sizing: border-box !important;
+        display: inline-block !important;
     }
     
     .nav-contact .phone {
