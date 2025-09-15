@@ -505,9 +505,8 @@ img, video, iframe {
     .hero {
         padding: 200px 0 120px;
         min-height: 80vh;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center center;
+        background-size: cover;
+        background-position: center 20%;
     }
     
     .about h2 {
