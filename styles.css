@@ -502,6 +502,11 @@ img, video, iframe {
 }
 
 @media (min-width: 1024px) {
+    .hero {
+        padding: 200px 0 120px;
+        min-height: 80vh;
+    }
+    
     .about h2 {
         font-size: 2rem;
         white-space: nowrap;
