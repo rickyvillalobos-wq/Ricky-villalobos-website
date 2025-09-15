@@ -505,6 +505,8 @@ img, video, iframe {
     .hero {
         padding: 200px 0 120px;
         min-height: 80vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+                    url('background .png') center/cover no-repeat;
     }
     
     .about h2 {
