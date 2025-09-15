@@ -1781,6 +1781,18 @@ img, video, iframe {
         flex: none !important;
     }
     
+    /* Fix pricing page buttons spacing */
+    .pricing-section .btn {
+        margin-right: 1.5rem !important;
+        margin-bottom: 0.5rem !important;
+        display: inline-block !important;
+        max-width: 40% !important;
+    }
+    
+    .pricing-section .btn:last-child {
+        margin-right: 0 !important;
+    }
+    
     .nav-contact .phone {
         padding: 0.3rem 0.6rem;
         font-size: 0.75rem;
