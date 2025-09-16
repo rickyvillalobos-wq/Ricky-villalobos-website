@@ -1822,6 +1822,22 @@ img, video, iframe {
         padding: 2rem !important;
     }
     
+    /* Scale down featured areas section on mobile */
+    .featured-areas h2 {
+        font-size: 1.6rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .featured-areas p,
+    .area-content p {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .area-content h3 {
+        font-size: 1.1rem !important;
+    }
+    
     .nav-contact .phone {
         padding: 0.3rem 0.6rem;
         font-size: 0.75rem;
