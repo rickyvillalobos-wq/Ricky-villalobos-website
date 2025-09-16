@@ -1636,7 +1636,10 @@ img, video, iframe {
     }
     
     .hero {
-        padding: 160px 0 100px;
+        padding: 160px 0 120px;
+        min-height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), 
+                    url('background .png') center top/cover no-repeat;
     }
     
     .hero-buttons .btn {
@@ -1820,7 +1823,10 @@ img, video, iframe {
     }
     
     .hero {
-        padding: 160px 0 100px;
+        padding: 160px 0 120px;
+        min-height: 110vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
+                    url('background .png') center top/cover no-repeat;
     }
     
     .hero h1 {
