@@ -1636,8 +1636,8 @@ img, video, iframe {
     }
     
     .hero {
-        padding: 160px 0 120px;
-        min-height: 100vh;
+        padding: 160px 0 100px;
+        min-height: 85vh;
         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), 
                     url('background .png') center top/cover no-repeat;
     }
@@ -1823,8 +1823,8 @@ img, video, iframe {
     }
     
     .hero {
-        padding: 160px 0 120px;
-        min-height: 110vh;
+        padding: 160px 0 100px;
+        min-height: 90vh;
         background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
                     url('background .png') center top/cover no-repeat;
     }
