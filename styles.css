@@ -1913,6 +1913,11 @@ img, video, iframe {
         margin-bottom: 1rem !important;
     }
     
+    /* Center multi-line headings on mobile */
+    .about h2 {
+        text-align: center !important;
+    }
+    
     .nav-contact .phone {
         padding: 0.3rem 0.6rem;
         font-size: 0.75rem;
