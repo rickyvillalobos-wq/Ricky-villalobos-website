@@ -1838,6 +1838,81 @@ img, video, iframe {
         font-size: 1.1rem !important;
     }
     
+    /* Comprehensive mobile scaling for all sections */
+    .about h2,
+    .cta-content h2,
+    .property-search h2,
+    .services-section h2,
+    .contact-form-section h2,
+    .market-insights h2,
+    .value-section h2,
+    .additional-services h2,
+    .comparison-section h2,
+    .review-stats h2,
+    .featured-reviews h2,
+    .social-contact h2 {
+        font-size: 1.6rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    /* Scale down all section paragraphs */
+    .about p,
+    .cta-content p,
+    .property-search p,
+    .services-section p,
+    .service-card p,
+    .contact-form-section p,
+    .market-insights p,
+    .value-section p,
+    .additional-services p,
+    .comparison-section p,
+    .review-stats p,
+    .featured-reviews p,
+    .social-contact p,
+    .insight-card p,
+    .value-card p,
+    .pricing-card p {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Scale down all h3 headings */
+    .service-card h3,
+    .contact-card h3,
+    .insight-card h3,
+    .value-card h3,
+    .pricing-card h3,
+    .stat-card h3,
+    .review-card h3,
+    .performance-card h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    /* Scale down card padding */
+    .service-card,
+    .contact-card,
+    .area-card,
+    .insight-card,
+    .value-card,
+    .pricing-card,
+    .stat-card,
+    .review-card,
+    .performance-card {
+        padding: 1.5rem !important;
+    }
+    
+    /* Scale down form elements */
+    .search-form,
+    .contact-form,
+    .review-form {
+        padding: 1.5rem !important;
+    }
+    
+    .contact-info-section h3 {
+        font-size: 1.2rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
     .nav-contact .phone {
         padding: 0.3rem 0.6rem;
         font-size: 0.75rem;
