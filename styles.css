@@ -1808,6 +1808,20 @@ img, video, iframe {
         margin-bottom: 0 !important;
     }
     
+    /* Scale down pricing section content on mobile */
+    .pricing-section h2 {
+        font-size: 1.6rem !important;
+    }
+    
+    .pricing-section p {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .pricing-section .container > div {
+        padding: 2rem !important;
+    }
+    
     .nav-contact .phone {
         padding: 0.3rem 0.6rem;
         font-size: 0.75rem;
